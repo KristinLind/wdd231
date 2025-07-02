@@ -124,9 +124,11 @@ nav.navigation ul {
 .navigation.show {
     display: block;
 }
-.navigation a {
-    padding: 0.5rem;
+nav a {
+    padding: 0.75rem 1.5rem;
+    display: inline-block;
 }
+  
 .navigation li {
     border-radius: 4px;
 }
@@ -141,7 +143,7 @@ nav.navigation ul {
     border-bottom: 5px solid var(--highlight-color);
 }
 .navigation li.current {
-    background-color: var(--accent-color2); /* match others */
+    background-color: var(--accent-color2);
     border: 2px solid var(--accent-color);
     font-weight: bold;
     color: var(--primary-color);
@@ -154,7 +156,27 @@ nav.navigation ul li a {
 .navigation a:hover {
     background-color: var(--highlight-color);
 }
-
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+button {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0.75rem;
+}
+.disabled-link {
+    opacity: 0.6;
+    pointer-events: none;
+}
+     
 h1, h2 {
     color: var(--primary-color);
 }

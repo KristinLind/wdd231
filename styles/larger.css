@@ -11,6 +11,11 @@ header {
 .hamburger {
     display: none;
 }
+.disabled-link {
+    opacity: 0.6;
+    pointer-events: none;
+}
+  
 .navigation {
     display: block;
     border-bottom: 1px solid var(--highlight-color);
@@ -40,15 +45,22 @@ nav.navigation ul {
     min-width: 48px;
 }
 .navigation a {
-    padding: 0.8rem;
+    padding: 0.75rem 1.5rem; 
+    display: inline-block;
     text-align: center;
     border: none;
 }
 .navigation li.current {
-    background-color: var(--accent-color2); /* match others */
+    background-color: var(--accent-color2);
     border: 2px solid var(--accent-color);
     font-weight: bold;
     color: var(--primary-color);
 }
+button {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0.75rem;
+}
+  
 
 }
