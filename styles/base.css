@@ -131,8 +131,10 @@ nav.navigation ul {
     border-radius: 4px;
 }
 .navigation li a {
-    display: block;
-    padding: .8rem 10px;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    min-height: 48px;
+    min-width: 48px;
     font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;

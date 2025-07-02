@@ -33,8 +33,11 @@ nav.navigation ul {
     display: block;
 }
 .navigation li a {
-    padding: 0.5rem 1rem;
+    display: inline-block;
+    padding: 1rem 1.5rem;
     font-size: 1rem;
+    min-height: 48px;
+    min-width: 48px;
 }
 .navigation a {
     padding: 0.8rem;
