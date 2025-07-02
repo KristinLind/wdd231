@@ -27,9 +27,14 @@ nav.navigation ul {
 }
 .navigation li {
     border: none;
+    padding: 0.2rem 0.6rem;
 }
 .navigation.show {
     display: block;
+}
+.navigation li a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
 }
 .navigation a {
     padding: 0.8rem;
@@ -37,7 +42,10 @@ nav.navigation ul {
     border: none;
 }
 .navigation li.current {
-    background-color: var(--accent-color);
-    color: white;das
+    background-color: var(--accent-color2); /* match others */
+    border: 2px solid var(--accent-color);
+    font-weight: bold;
+    color: var(--primary-color);
 }
+
 }

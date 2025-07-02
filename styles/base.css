@@ -139,11 +139,12 @@ nav.navigation ul {
     border-bottom: 5px solid var(--highlight-color);
 }
 .navigation li.current {
-    background-color: var(--accent-color);
-    border: 2px solid var(--border-color);
+    background-color: var(--accent-color2); /* match others */
+    border: 2px solid var(--accent-color);
     font-weight: bold;
-    text-decoration: underline;
+    color: var(--primary-color);
 }
+
 nav.navigation ul li a {
     padding: 0.5rem 1rem;
     font-size: 1rem;
