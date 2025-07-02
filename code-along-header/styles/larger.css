@@ -1,0 +1,38 @@
+@media only screen and (min-width: 38rem) {
+    header, main, nav, footer {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem;
+}
+
+header {
+    grid-template-columns: 44px auto;
+}
+.hamburger {
+    display: none;
+}
+.navigation {
+    display: block;
+    border-bottom: 1px solid var(--highlight-color);
+}
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.navigation li {
+    border: none;
+}
+.navigation.show {
+    display: block;
+}
+.navigation a {
+    padding: 0.8rem;
+    text-align: center;
+    border: none;
+}
+.navigation li.current {
+    background-color: var(--accent-color);
+    color: white;das
+}
+}
