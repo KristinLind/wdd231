@@ -97,6 +97,11 @@ header span {
     display: none;
     border-bottom: 6px solid var(--border-color);
 }
+nav.navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
 
 .navigation ul {
     display: flex;

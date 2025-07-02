@@ -20,6 +20,11 @@ header {
     justify-content: center;
     gap: 1rem;
 }
+nav.navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
 .navigation li {
     border: none;
 }
