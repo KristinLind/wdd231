@@ -1,46 +1,47 @@
 const courses = [
     { name: "WDD 130", subject: "WDD", credits: 3, completed: true },
     { name: "WDD 131", subject: "WDD", credits: 3, completed: true },
+    { name: "WDD 231", subject: "WDD", credits: 3, completed: false },
+    { name: "CSE 111", subject: "CSE", credits: 3, completed: true },
     { name: "CSE 210", subject: "CSE", credits: 3, completed: true },
-    { name: "CSE 220", subject: "CSE", credits: 3, completed: false },
-    { name: "WDD 231", subject: "WDD", credits: 3, completed: false }
+    { name: "CSE 220", subject: "CSE", credits: 3, completed: false }
 ];
-  
+
 const courseList = document.getElementById("courseList");
-const totalCredits = document.getElementById("totalCredits");
+const totalCourses = document.getElementById("totalCourses");
 const filterButtons = document.querySelectorAll("#filters button");
-  
+
 function renderCourses(subject = "All") {
-    courseList.innerHTML = ""; // clear previous
-  
-const filtered = subject === "All" 
-      ? courses 
-      : courses.filter(c => c.subject === subject);
-  
-let credits = 0;
-  
+    courseList.innerHTML = ""; // clear
+
+    const filtered = subject === "All"
+        ? courses
+        : courses.filter(c => c.subject === subject);
+
+    totalCourses.textContent = `The total number of courses listed below is ${filtered.length}`;
+
     filtered.forEach(course => {
-      const div = document.createElement("div");
-      div.textContent = `${course.name} - ${course.credits} credits`;
-      if (course.completed) {
-        div.style.fontWeight = "bold";
-        div.style.color = "green";
-        div.textContent += " ✅ Completed";
-      }
-      courseList.appendChild(div);
-      credits += course.credits;
-});
-  
-    totalCredits.textContent = `Total Credits: ${filtered.reduce((sum, c) => sum + c.credits, 0)}`;
+        const div = document.createElement("div");
+        div.classList.add("course");
+
+        if (course.completed) {
+            div.classList.add("completed");
+            div.textContent = `✓ ${course.name} (${course.credits} credits)`;
+        } else {
+            div.classList.add("not-completed");
+            div.textContent = `${course.name} (${course.credits} credits)`;
+        }
+
+        courseList.appendChild(div);
+    });
 }
-  
-// Initial render
+
+// initial render
 renderCourses();
-  
-// Add event listeners for filters
+
+// add event listeners to buttons
 filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      renderCourses(btn.dataset.subject);
+        renderCourses(btn.dataset.subject);
+    });
 });
-});
-  
