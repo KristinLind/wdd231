@@ -89,6 +89,10 @@ header {
     min-height: 48px;
     margin: 1rem;
 }
+#filters button.current {
+    background-color: var(--primary-color);
+    color: white;
+}
 
 button {
     min-width: 48px;

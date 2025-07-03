@@ -1,8 +1,8 @@
 :root {
     --primary-color: #274C77;
-    --accent-color: #6096BA;
+    --accent-color: #529ade;
     --accent-color2: #A3CEF1;
-    --border-color: #8B8C89;
+    --border-color: #cd50b8;
     --highlight-color: #E7ECEF;
 }
 
@@ -120,7 +120,6 @@ nav.navigation ul {
     border-radius: 8px;
     display: inline-block;
     padding: 0.3rem 0.75rem;
-    font-size: 1rem;
     list-style: none;
     transition: background-color 0.3s;
     border: 2px solid var(--accent-color); 
@@ -133,17 +132,6 @@ nav a {
     padding: 0.75rem 1.5rem;
     display: inline-block;
 }
-  
-.navigation li {
-    background-color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-    border-radius: 4px;
-    display: inline-block;
-    padding: 0.3rem 0.75rem;
-    font-size: 1rem;
-    list-style: none;
-    transition: background-color 0.3s;
-}
 
 .navigation li a {
     display: inline-block;
@@ -151,6 +139,8 @@ nav a {
     min-height: 48px;
     min-width: 48px;
     font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.2;
     color: white;
     text-decoration: none;
 }
@@ -159,9 +149,9 @@ nav a {
     background-color: var(--accent-color2);
     border: 2px solid var(--accent-color);
     font-weight: bold;
+    font-size: 1.5rem;
     color: white;
 }
-
 
 nav.navigation ul li a {
     padding: 0.5rem 1rem;
@@ -263,13 +253,14 @@ footer {
     background-color: var(--accent-color);
     color: white;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    min-width: 150px; /* make it wide */
+    min-width: 2000px;
+    min-height: 60px;
     transition: background-color 0.3s ease;
 }
 
@@ -277,7 +268,14 @@ footer {
     background-color: var(--accent-color2);
     color: var(--primary-color);
 }
-
+#filters button.current {
+    background-color: var(--primary-color);
+    color: white;
+}
 #filters button:hover {
     background-color: var(--primary-color);
+}
+#filters button.current:hover {
+    background-color: var(--accent-color);
+    color: white;
 }
