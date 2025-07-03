@@ -39,9 +39,14 @@ function renderCourses(subject = "All") {
 // initial render
 renderCourses();
 
-// add event listeners to buttons
 filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
+        // Remove active from all
+        filterButtons.forEach(b => b.classList.remove("active"));
+        // Add active to clicked one
+        btn.classList.add("active");
+
         renderCourses(btn.dataset.subject);
     });
 });
+

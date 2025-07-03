@@ -203,6 +203,7 @@ h1, h2 {
     font-weight: bold;
     text-align: center;
     min-width: 150px;
+    min-height: 28px;
     border: 1px solid var(--border-color);
 }
 
@@ -250,18 +251,33 @@ footer {
 .social a:hover {
     background-color: var(--accent-color2);
 }
-#filters button {
-    background-color: var(--accent-color2);
-    border: 2px solid var(--accent-color);
-    color: var(--primary-color);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 1.5rem 2rem;
-    margin: 1rem;
-    font-size: 1rem;
+#filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
 }
-#filters button:hover {
+
+#filters button {
+    display: inline-block;
     background-color: var(--accent-color);
     color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    min-width: 150px; /* make it wide */
+    transition: background-color 0.3s ease;
+}
+
+#filters button.active {
+    background-color: var(--accent-color2);
+    color: var(--primary-color);
+}
+
+#filters button:hover {
+    background-color: var(--primary-color);
 }
