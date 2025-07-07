@@ -214,7 +214,7 @@ h1, h2 {
     min-width: 120px;
     max-width: 100%;
     box-sizing: border-box;
-    min-height: 48px;
+    min-height: 56px;
     border: 2px solid var(--border-color);
     transition: transform 0.2s ease;
 }
@@ -281,7 +281,7 @@ footer {
     flex: 1 1 30%;
     max-width: 200px;
     min-width: 120px;
-    min-height: 48px;
+    min-height: 56px;
     display: inline-block;
     background-color: var(--accent-color);
     color: white;
@@ -292,6 +292,7 @@ footer {
     border: 2px solid var(--accent-color);
     border-radius: 6px;
     cursor: pointer;
+    margin: 0.75rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
