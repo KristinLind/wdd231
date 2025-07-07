@@ -81,7 +81,7 @@ header {
 
 .course.completed {
     background-color: var(--accent-color);
-    color: black;
+    color: white;
     border-color: var(--accent-color);
 }
 
@@ -106,7 +106,7 @@ header {
 
 #filters button.current {
     background-color: var(--primary-color);
-    color: black;
+    color: white;
 }
 
 button {
