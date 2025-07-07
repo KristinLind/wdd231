@@ -1,6 +1,6 @@
 :root {
     --primary-color: #274C77;
-    --accent-color: #2C7DC9;
+    --accent-color: #1E6FB8;;
     --accent-color2: #70B8E8;
     --border-color: #AD3F99;
     --highlight-color: #E7ECEF;
@@ -204,6 +204,37 @@ button {
 h1, h2 {
     color: var(--primary-color);
 }
+.project-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.project-links li {
+    margin-bottom: 0.5rem;
+}
+  
+.project-links li a {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.project-links li a:hover,
+project-links li a:focus {
+    background-color: var(--accent-color2);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.project-links li a:active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 .course {
     display: inline-block;
     padding: 1rem 1.5rem;
@@ -294,6 +325,7 @@ footer {
     cursor: pointer;
     margin: 0.75rem;
     transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
 #filters button.active,
@@ -301,12 +333,14 @@ footer {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: white;
+    box-shadow: 0 4px 12px var(--border-color);
 }
 
 #filters button:hover {
-    background-color: var(--accent-color2);
-    border-color: var(--accent-color2);
-    color: var(--primary-color);
+    background-color: var(--accent-color);
+    border-color: var(--border-color);
+    color: white;
+    box-shadow: 0 4px 12px var(--accent-color2);
 }
 @media (max-width: 400px) {
     header span {

@@ -91,21 +91,42 @@ header {
     border-color: var(--border-color);
 }
 #filters {
-    margin: 1rem 0;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
 }
 
 #filters button {
+    flex: 1 1 30%;
+    max-width: 200px;
     min-width: 120px;
-    min-height: 48px;
-    margin: 1.2rem;
-    padding: 0.75rem 1.25rem;
+    min-height: 56px;
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0.75rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+#filters button.active,
 #filters button.current {
     background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+#filters button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
     color: white;
 }
 
