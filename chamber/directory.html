@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="South Jordan Chamber of Commerce Directory">
+  <meta name="author" content="Kristin Lind">
+  <title>South Jordan Chamber of Commerce | Directory</title>
+
+  <meta property="og:title" content="South Jordan Chamber of Commerce Directory">
+  <meta property="og:description" content="Find local businesses, services, and organizations that are part of the South Jordan Chamber of Commerce.">
+  <meta property="og:image" content="https://https://kristinlind.github.io/wdd231https://kristinlind.github.io/wdd231/chamber/images/social-preview.png">
+  <meta property="og:url" content="https://kristinlind.github.io/wdd231/chamber/directory.html">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  </head>
+<body>
+    <header>
+        <h1>South Jordan Chamber of Commerce</h1>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html" class="highlight">Directory</a></li>
+                <li><a href="join.html">Join</a></li>   
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="directory-controls">
+            <h2>Our Members</h2>
+            <div class="view-toggle"
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
+            </div>
+        </section>
+        <section id="directory" class="directory grid"
+        <!-- Member cards -->
+        </section>
+    </main>
+</body>
+
+<footer>  
+    <div class="social">
+    <a href="https://github.com/kristinlind" target="_blank"><img src="images/github-logo.svg" alt="github logo" width="16" height="16"></a>
+    <a href="https://facebook.com/kristindensleylind" target="_blank"><img src="images/facebook-logo.svg" alt="facebook logo" width="16" height="16"></a>
+    <a href="https://linkedin.com/in/kristin-lind-0281572ba/" target="_blank"><img src="images/linkedin-logo.svg" alt="linked in logo" width="16" height="16"></a>
+    <a href="https://instagram.com/kristindlind" target="_blank"><img src="images/instagram-logo.svg" alt="instagram logo" width="16" height="16"></a>
+    </div>
+    <footer>
+        <p>
+          &copy; <span id="currentyear"></span> South Jordan Chamber of Commerce |
+          <a href="mailto:info@southjordanchamber.com">info@southjordanchamber.com</a>
+        </p>
+        <p>WDD 231 | Kristin Lind</p>
+        <p id="lastModified"></p>
+    </footer>
+      
+<script src="scripts/date.js" defer></script>
+<script src="scripts/directory.js" defer></script>
+</body>
+</html>

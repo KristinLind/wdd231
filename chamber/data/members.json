@@ -1,0 +1,59 @@
+[
+    {
+      "name": "South Jordan Bakery",
+      "address": "123 Main St, South Jordan, UT",
+      "phone": "801-555-1234",
+      "website": "https://southjordanbakery.com",
+      "image": "bakery.png",
+      "membership": "gold"
+    },
+    {
+      "name": "Jordan Auto Repair",
+      "address": "456 Auto Ln, South Jordan, UT",
+      "phone": "801-555-5678",
+      "website": "https://jordanautorepair.com",
+      "image": "auto-repair.png",
+      "membership": "silver"
+    },
+    {
+      "name": "Downtown Florist",
+      "address": "789 Flower Rd, South Jordan, UT",
+      "phone": "801-555-9012",
+      "website": "https://downtownflorist.com",
+      "image": "florist.png",
+      "membership": "member"
+    },
+    {
+      "name": "Mountain View Gym",
+      "address": "321 Fitness Blvd, South Jordan, UT",
+      "phone": "801-555-3456",
+      "website": "https://mountainviewgym.com",
+      "image": "gym.png",
+      "membership": "gold"
+    },
+    {
+      "name": "Valley Law Firm",
+      "address": "654 Justice Ave, South Jordan, UT",
+      "phone": "801-555-7890",
+      "website": "https://valleylawfirm.com",
+      "image": "law-firm.png",
+      "membership": "silver"
+    },
+    {
+      "name": "Tech Solutions",
+      "address": "987 Innovation Pkwy, South Jordan, UT",
+      "phone": "801-555-2345",
+      "website": "https://techsolutions.com",
+      "image": "tech.png",
+      "membership": "member"
+    },
+    {
+      "name": "Jordan Real Estate",
+      "address": "159 Home St, South Jordan, UT",
+      "phone": "801-555-6789",
+      "website": "https://jordanrealestate.com",
+      "image": "real-estate.png",
+      "membership": "gold"
+    }
+]
+  
