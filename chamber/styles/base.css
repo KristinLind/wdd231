@@ -18,6 +18,12 @@ body {
     background-color: var(--background-color);
     overflow-x:hidden;
 }
+header .site-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--card-background);
+    text-align: center;
+}
 header, main, nav, footer {
     width: 100%;
     margin: 0 auto; 
