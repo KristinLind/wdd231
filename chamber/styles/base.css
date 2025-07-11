@@ -23,6 +23,7 @@ header .site-title {
     font-weight: bold;
     color: var(--card-background);
     text-align: center;
+    padding-top: 2rem;
 }
 header, main, nav, footer {
     width: 100%;
