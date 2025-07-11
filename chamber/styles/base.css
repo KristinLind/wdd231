@@ -36,7 +36,7 @@ header {
 }
 header *,
 footer * {
-    background-color: transparen !important;
+    background-color: transparent !important;
     color: var(--card-background) !important;
 }
 header h1 {
