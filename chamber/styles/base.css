@@ -19,17 +19,25 @@ main {
     margin: 0 auto;
     padding: 1rem;
 }
+body header {
+    background-color: var(--primary-color);
+}
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
+    flex-wrap: wrap;
+    background-color: var(--primary-color)!important;
     color: var(--card-background);
     padding: 0.5rem 1rem;
     border-bottom: 3px solid var(--secondary-color);
-    flex-wrap: wrap;
+    width: 100%;
 }
-
+header *,
+footer * {
+    background-color: transparen !important;
+    color: var(--card-background) !important;
+}
 header h1 {
     justify-content: center;
     margin: 0;
@@ -135,10 +143,13 @@ button {
 button:hover {
     background-color: var(--primary-color);
 }
+body footer {
+    background-color: var(--primary-color);
+}
 
 footer {
-    background-color: var(--primary-color);
-    color: var(--card-background);
+    background-color: var(--primary-color) !important;
+    color: var(--card-background)!important;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
