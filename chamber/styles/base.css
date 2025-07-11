@@ -10,6 +10,7 @@
     font-family: "Josefin Sans", sans-serif;
     box-sizing: border-box;
 }
+  
 body {
     color: #1b1b1b;
     margin: 0;
@@ -344,7 +345,7 @@ button {
     transition: background-color 0.3s ease;
 }
 button:hover {
-    background-color: var(--text-color);
+    background-color: var(--secondary-color);
 }
 .social {
     display: flex;

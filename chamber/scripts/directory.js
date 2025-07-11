@@ -8,6 +8,7 @@ function setActive(activeBtn, inactiveBtn) {
 }
 
 function renderMembers(members, view) {
+    
     directoryContainer.innerHTML = ""; // clear content
 
     members.forEach(member => {
