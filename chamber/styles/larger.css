@@ -11,6 +11,11 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+@media (min-width: 768px) {
+    .navigation {
+        display: block;
+    }
+}
 
 #menu-button {
     display: none;

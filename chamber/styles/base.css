@@ -119,6 +119,9 @@ footer {
     margin-top: 2rem;
     border-top: 3px solid var(--secondary-color);
 }
+footer p {
+    color: #fff;
+}
 footer a {
     color: #fff;
     text-decoration: underline;
