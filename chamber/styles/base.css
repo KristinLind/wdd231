@@ -1,11 +1,12 @@
-root {
+:root {
     --primary-color: #2F4B7C;
-	--secondary-color: #F95D6A;
-	--background-color: #F4F4F9;
-	--text-color: #333333;
+    --secondary-color: #F95D6A;
+    --background-color: #F4F4F9;
+    --text-color: #333333;
     --card-background: #ffffff;
     --card-border: #cccccc;
 }
+
 * {
     font-family: "Josefin Sans", sans-serif;
     box-sizing: border-box;
