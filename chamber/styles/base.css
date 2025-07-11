@@ -26,9 +26,10 @@ header .site-title {
     padding-top: 2rem;
 }
 header, main, nav, footer {
-    width: 100%;
+    max-width: 100%;
     margin: 0 auto; 
     padding: 0.5rem;
+    overflow-x: hidden;
 }
 header h1 {
     margin: 0;
@@ -229,7 +230,10 @@ h1, h2 {
     font-size: 1.5rem;
     cursor: pointer;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+}
 .directory.grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
