@@ -5,10 +5,10 @@
     }
 }
 
-/* On very large screens: 4 columns */
+/* On very large screens: 3 columns */
 @media (min-width: 1200px) {
     .directory.grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 @media (min-width: 768px) {
