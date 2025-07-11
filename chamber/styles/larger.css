@@ -1,0 +1,17 @@
+/* On larger screens: 3 columns */
+@media (min-width: 768px) {
+    .directory.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* On very large screens: 4 columns */
+@media (min-width: 1200px) {
+    .directory.grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+#menu-button {
+    display: none;
+}

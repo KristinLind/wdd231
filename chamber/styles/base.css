@@ -19,6 +19,13 @@ header {
     padding: 1rem;
     text-align: center;
 }
+.navigation {
+    display: none;
+}
+.navigation.open {
+    display: block;
+}
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -45,20 +52,50 @@ nav a:hover {
 }
 
 .member-card {
-    background: var(--card-background);
-    border: 1px solid var(--secondary-color);
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 1rem;
     border-radius: 8px;
+    transition: transform 0.2s ease;
+    text-align: center;
 }
-.member-card:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
 .member-card img {
+    display: block;
+    margin: 0 auto 1rem auto;
     max-width: 100%;
     height: auto;
+    max-height: 150px;
+    object-fit: contain;
 }
+.member-card:hover {
+    transform: scale(1.02);
+}
+
+.member-card h3 {
+    margin: 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.member-card p,
+.member-card a {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.directory.list .member-card {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+.directory.list .member-card:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+.directory.list .member-card img {
+    width: 50px;
+    height: auto;
+}
+
 
 button {
     background-color: var(--secondary-color);
