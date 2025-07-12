@@ -191,9 +191,20 @@ nav a {
     font-size: 1.5rem;
     color: white;
 }
-
+nav a[aria-current="page"] {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+}
 nav.navigation ul li a {
     padding: 0.5rem 1rem;
+}
+nav a.highlight {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
 }
 .navigation a:hover {
     background-color: var(--secondary-color);
