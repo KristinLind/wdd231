@@ -57,7 +57,7 @@ function displaySpotlights(members) {
       const card = document.createElement("div");
       card.classList.add("spotlight-card");
       card.innerHTML = `
-        <img src="images/${member.image}" alt="${member.name} logo">
+        <img src="images/${member.image}" alt="${member.name} logo" width="80" height="80">
         <h4>${member.name}</h4>
         <p>${member.address}</p>
         <p>${member.phone}</p>
