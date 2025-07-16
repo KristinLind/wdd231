@@ -544,7 +544,7 @@ highlight {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 250px;
+    min-height: 220px;
 }
 
 .spotlight-card:hover {
