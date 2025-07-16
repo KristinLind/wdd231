@@ -55,3 +55,9 @@ document.querySelector("#lastModified").textContent = `Last Modified: ${document
 
 getMembers("grid");
 setActive(gridBtn, listBtn);
+const someElement = document.querySelector('#element-you-use');
+if (someElement) {
+  someElement.addEventListener('click', () => {
+    // …
+  });
+}

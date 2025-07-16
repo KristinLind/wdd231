@@ -564,7 +564,9 @@ highlight {
 .spotlight-card a {
     display: inline-block;
     margin-top: 0.5rem;
-    color: var(--secondary-color);
+    color: #B00020;
+    }
+    ;
     text-decoration: underline;
 }
   
