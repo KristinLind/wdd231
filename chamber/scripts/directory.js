@@ -60,3 +60,10 @@ if (someElement) {
   someElement.addEventListener('click', () => { /* ... */
   });
 }
+const toggleViewBtn = document.querySelector('#toggleView');
+if (toggleViewBtn) {
+    toggleViewBtn.addEventListener('click', () => {
+        // your code
+    });
+}
+

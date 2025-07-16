@@ -414,6 +414,7 @@ body footer {
     gap: 1rem;
     margin-top: 2rem;
     border-top: 3px solid var(--secondary-color);
+    min-height: 100px;
 }
 .footer-left, .footer-center, .footer-right {
     flex: 1;
@@ -474,7 +475,7 @@ highlight {
 }  
 .cta-button {
     background-color: var(--secondary-color);
-    color: white;
+    color: #000;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     font-weight: bold;
