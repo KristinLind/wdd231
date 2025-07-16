@@ -385,16 +385,16 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     background-color: white;
     border: 1px solid var(--border-color);
     border-radius: 50%;
     transition: background-color 0.3s ease;
 }
 .social img {
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
 }
 .social a:hover {
     background-color: var(--accent-color2);
@@ -474,7 +474,7 @@ highlight {
 }  
 .cta-button {
     background-color: var(--secondary-color);
-    color: var(--card-background);
+    color: white;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     font-weight: bold;
@@ -518,61 +518,68 @@ highlight {
     padding: 2rem;
     background-color: var(--background-color);
 }
-  
+
 .spotlights h3 {
     text-align: center;
     margin-bottom: 1rem;
     color: var(--primary-color);
 }
-  
+
 .spotlight-cards {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .spotlight-card {
     background-color: var(--card-background);
     border: 1px solid var(--card-border);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     text-align: center;
     transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 250px;
 }
-  
+
 .spotlight-card:hover {
     transform: scale(1.02);
 }
-  
+
 .spotlight-card img {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
-    margin-bottom: 0.5rem;
+    margin: 0 auto 0.5rem auto;
 }
-  
+
 .spotlight-card h4 {
     margin: 0.5rem 0;
     color: var(--primary-color);
 }
-  
+
 .spotlight-card p {
     font-size: 0.9rem;
     margin: 0.2rem 0;
     color: var(--text-color);
 }
-  
+
 .spotlight-card a {
     display: inline-block;
     margin-top: 0.5rem;
     color: #B00020;
-    }
-    ;
     text-decoration: underline;
 }
-  
+
 .spotlight-card a:hover {
     color: #e94b57;
 }
+
 .info-panels {
     display: flex;
     flex-direction: column;
