@@ -14,8 +14,13 @@ async function fetchWeather() {
 function displayWeather(data) {
   const currentTemp = Math.round(data.list[0].main.temp);
   const description = data.list[0].weather[0].description;
-  const icon = data.list[0].weather[0].icon;
-
+    const icon = data.list[0].weather[0].icon;
+    const iconImg = document.querySelector("#weather-icon");
+    iconImg.setAttribute("src", `https://openweathermap.org/img/wn/${icon}@2x.png`);
+    iconImg.setAttribute("alt", description);
+    iconImg.setAttribute("width", "40");
+    iconImg.setAttribute("height", "40");
+    
   document.querySelector("#current-temp").innerHTML = `${currentTemp}°F`;
   document.querySelector("#weather-desc").textContent = description.charAt(0).toUpperCase() + description.slice(1);
   document.querySelector("#weather-icon").setAttribute("src", `https://openweathermap.org/img/wn/${icon}@2x.png`);
