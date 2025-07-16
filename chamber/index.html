@@ -28,11 +28,11 @@
 </head>
 <body>
     <header>
-        <h1 class="site-title">South Jordan Chamber of Commerce</h1>
+        <div class="site-title">South Jordan Chamber of Commerce</div>
         <button id="menu-button" aria-label="Menu">&#9776;</button>
         <nav id="nav-bar" class="navigation">
             <ul>
-                <li><a href="index.html"aria-current="page">Home</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>   
@@ -40,6 +40,7 @@
         </nav>
     </header>
     <main>
+        <h1 class="sr-only">South Jordan Chamber of Commerce</h1>
         <section class="hero">
             <img src="images/hero.webp" alt="Welcome to South Jordan Chamber">
             <div class="hero-text">
@@ -61,7 +62,7 @@
                 <h3>Current Weather</h3>
                 <p id="current-temp"></p>
                 <figure>
-                    <img id="weather-icon" src="" alt="">
+                    <img id="weather-icon" src="images/weather-placeholder.png" alt="Weather icon">
                     <figcaption id="weather-desc"></figcaption>
                 </figure>
                 </div>
