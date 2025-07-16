@@ -26,7 +26,7 @@ header .site-title {
     font-size: 2rem;
     font-weight: bold;
     color: var(--card-background);
-    padding-top: 1rem 0;
+    padding-top: 1rem;
 }
 .sr-only {
     position: absolute;
@@ -531,7 +531,7 @@ highlight {
 
 .spotlight-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
