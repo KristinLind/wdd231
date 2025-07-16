@@ -607,7 +607,7 @@ highlight {
   
 @media (max-width: 600px) {
     .spotlight-cards {
-      grid-template-columns: repeat(1fr);
+      grid-template-columns: 1fr;
 }
 }
   
