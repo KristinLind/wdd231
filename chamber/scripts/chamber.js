@@ -74,3 +74,12 @@ function displaySpotlights(members) {
 }
 fetchWeather();
 fetchSpotlights();
+
+const refreshBtn = document.querySelector('#refresh-weather');
+if (refreshBtn) {
+    refreshBtn.addEventListener('click', () => {
+        console.log("Refreshing weather...");
+        fetchWeather();
+    });
+}
+
