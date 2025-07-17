@@ -57,8 +57,8 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
     .hero img {
-        max-width: 1000px;
+        max-width: 1200px;
     }
 }
