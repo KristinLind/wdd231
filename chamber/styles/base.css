@@ -64,7 +64,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     padding: 1rem;
     gap: 1rem;
@@ -142,6 +142,7 @@ header .logo-img {
     flex-wrap: wrap;
     justify-content: center;
     display: none;
+    width: 100%;
     border-bottom: 5px solid var(--border-color);
 }
 
@@ -597,6 +598,20 @@ highlight {
     flex: 1;
     text-align: center;
 }
+@media (min-width: 768px) {
+    .navigation {
+        display: block;
+        width: auto;
+}
+    .navigation ul {
+        flex-direction: row;
+        gap: 1rem;
+}
+
+    #menu-button {
+        display: none;
+    }
+}
   
 @media (min-width: 768px) {
     .info-panels {
@@ -617,7 +632,9 @@ highlight {
 }
 @media (max-width: 767px) {
     .info-panels {
-      flex-direction: column;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 }
+ 
   
