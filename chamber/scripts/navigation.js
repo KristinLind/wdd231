@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector(".navigation");
 
     menuButton.addEventListener("click", () => {
-        nav.classList.toggle("open");
+        nav.classList.toggle("show");
+        menuButton.classList.toggle("open");
     });
 });
+

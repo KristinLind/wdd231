@@ -136,6 +136,11 @@ header .logo-img {
 .hamburger.show::before {
     content: "\00D7";
 }
+.hamburger.open::before {
+    content: "\00D7";
+    font-size: 2rem;
+    color: white;
+}
 
 .navigation {
     flex-wrap: wrap;
