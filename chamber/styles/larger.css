@@ -26,6 +26,10 @@
     header {
         justify-content: center;
     }
+    .site-title {
+        text-align: center;
+        margin: 0 auto;
+    }
 }
 @media (max-width: 767px) {
     .hero-text h2 {
