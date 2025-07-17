@@ -447,7 +447,7 @@ highlight {
     position: absolute;
     bottom: 1rem;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.5);
     color: white;
     padding: 1rem 1rem;
@@ -485,7 +485,7 @@ highlight {
 
 .events-weather {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
     gap: 1rem;
     margin: 2rem 0;
 }

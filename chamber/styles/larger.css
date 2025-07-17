@@ -27,6 +27,11 @@
         justify-content: center;
     }
 }
+@media (max-width: 767px) {
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+}
 @media (min-width: 768px) {
     .info-panels {
         flex-direction: row;
