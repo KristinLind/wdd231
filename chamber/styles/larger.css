@@ -1,11 +1,9 @@
-/* On larger screens: 3 columns */
 @media (min-width: 768px) {
     .directory.grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* On very large screens: 3 columns */
 @media (min-width: 1200px) {
     .directory.grid {
         grid-template-columns: repeat(3, 1fr);
@@ -19,4 +17,48 @@
 
 #menu-button {
     display: none;
+}
+@media (min-width: 768px) {
+    .navigation {
+        display: block;
+        width: auto;
+    }
+    .navigation ul {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    #menu-button {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .info-panels {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .spotlight-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .spotlight-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .info-panels {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero img {
+        max-width: 1000px;
+    }
 }
