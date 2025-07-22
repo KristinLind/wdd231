@@ -265,7 +265,25 @@ project-links li a:focus {
 .course:hover {
     transform: scale(1.03);
 }
-
+dialog {
+    padding: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    max-width: 400px;
+}
+  
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+  
+#closeCourseModal {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
   
 footer {
     background-color: var(--primary-color);
