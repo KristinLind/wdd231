@@ -39,12 +39,78 @@
     </header>
 
     <main>
-        <section></section>
-        <section></section>
-        <section></section>
-    </main>
-
-    <footer class="footer">
+      <h1 class="page-title">Join the South Jordan Chamber of Commerce</h1>
+    
+      <form action="thankyou.html" method="get" class="membership-form">
+        <fieldset>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" title="First Name" autocomplete="given-name" required>
+      
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" title="Last Name" autocomplete="family-name" required>
+      
+          <label for="orgTitle">Organizational Title</label>
+          <input type="text" id="orgTitle" name="orgTitle" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+      
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" title="Email" autocomplete="email" required placeholder="you@example.com">
+      
+          <label for="phone">Mobile Phone</label>
+          <input type="tel" id="phone" name="phone" title="Phone" autocomplete="tel" required>
+      
+          <label for="organization">Organization Name</label>
+          <input type="text" id="organization" name="organization" title="Organization" autocomplete="organization" required>
+      
+          <label for="membershipLevel">Membership Level</label>
+          <select id="membershipLevel" name="membershipLevel" title="Membership Level">
+            <option value="NP">NP Membership (No Fee)</option>
+            <option value="Bronze">Bronze Membership</option>
+            <option value="Silver">Silver Membership</option>
+            <option value="Gold">Gold Membership</option>
+          </select>
+      
+          <label for="description">Business Description</label>
+          <textarea id="description" name="description" title="Business Description"></textarea>
+      
+          <input type="hidden" name="timestamp" id="timestamp">
+      
+          <button type="submit">Apply for Membership</button>
+        </fieldset>
+      </form>      
+    
+      <section class="membership-cards">
+        <h2 class="membership-heading">Membership Levels</h2>
+        <div class="cards-container">
+      
+          <div class="card np">
+            <h3>Non-Profit</h3>
+            <p>No fee for qualifying non-profit organizations.</p>
+            <a href="#np-modal">Learn more</a>
+          </div>
+      
+          <div class="card bronze">
+            <h3>Bronze</h3>
+            <p>Entry-level benefits for small businesses.</p>
+            <a href="#bronze-modal">Learn more</a>
+          </div>
+      
+          <div class="card silver">
+            <h3>Silver</h3>
+            <p>Additional exposure and event discounts.</p>
+            <a href="#silver-modal">Learn more</a>
+          </div>
+      
+          <div class="card gold">
+            <h3>Gold</h3>
+            <p>Maximum benefits with spotlight promotions.</p>
+            <a href="#gold-modal">Learn more</a>
+          </div>
+      
+        </div>
+      </section>
+  </main>
+    
+  <footer class="footer">
         <div class="footer-left">
           <p>&copy; <span id="currentyear"></span> South Jordan Chamber of Commerce</p>
           <p><a href="mailto:info@sjchamber.com">Contact Us</a></p>
@@ -61,11 +127,43 @@
           <p>WDD 231 | 🌷Kristin Lind🌷</p>
           <p id="lastModified"></p>
         </div>
-      </footer>
+    </footer>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/directory.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+    <div id="np-modal" class="modal">
+      <div class="modal-content">
+        <button class="close">Close</button>
+        <h3>Non-Profit Membership</h3>
+        <p>Perfect for community organizations with no fees. Includes basic directory listing and event invitations.</p>
+      </div>
+    </div>
     
+    <div id="bronze-modal" class="modal">
+      <div class="modal-content">
+        <button class="close">Close</button>
+        <h3>Bronze Membership</h3>
+        <p>Entry-level membership with directory listing and access to training events.</p>
+      </div>
+    </div>
+    
+    <div id="silver-modal" class="modal">
+      <div class="modal-content">
+        <button class="close">Close</button>
+        <h3>Silver Membership</h3>
+        <p>Silver level includes everything in Bronze, plus spotlight promotions and event discounts.</p>
+      </div>
+    </div>
+    
+    <div id="gold-modal" class="modal">
+      <div class="modal-content">
+        <button class="close">Close</button>
+        <h3>Gold Membership</h3>
+        <p>Gold members receive all benefits including premium advertising placements and exclusive networking events.</p>
+      </div>
+    </div>
+      
     </body>
     </html>
