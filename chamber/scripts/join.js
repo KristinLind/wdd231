@@ -22,6 +22,12 @@ document.querySelectorAll('.modal .close').forEach(closeBtn => {
       closeBtn.closest('.modal').style.display = 'none';
     });
 });
-  
+
+const timestampInput = document.getElementById("timestamp");
+if (timestampInput) {
+  const now = new Date().toLocaleString();
+  timestampInput.value = now;
+}
+ 
   
   
