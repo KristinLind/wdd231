@@ -681,7 +681,7 @@ highlight {
 }
   
 .card {
-    background: var(--card-border);
+    background: rgb(200, 204, 208);
     color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
     border-radius: 8px;
@@ -695,13 +695,23 @@ highlight {
     animation: fadeInUp 1s forwards;
 }
 .card h3 {
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 .card p {
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 .card a {
-    color: var(--secondary-color);
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--card-background);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--card-background);
     text-decoration: underline;
     font-weight: bold;
 }
