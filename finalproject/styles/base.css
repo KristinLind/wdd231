@@ -1,0 +1,239 @@
+:root {
+    --primary-color: #19535F;
+    --accent-color: #881e15;
+    --secondary-color: #62c3c9;
+    --bg-light: rgb(236, 228, 228);
+    --text-color: #343e3b;
+}
+  
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+  
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    border-bottom: 10px solid var(--accent-color);
+}
+  
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.title-block {
+    text-align: center;
+    flex: 1;
+}
+.title-block h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+}
+.title-block h2,
+.title-block .byline {
+    font-size: 1.8rem;
+    margin: 0;
+}
+.profile-card {
+    text-align: center;
+    margin-right: 1rem;
+}
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
+}
+.hero-img img {
+    width: 1200;
+    height: auto;
+    display: block;
+    max-height: 1000px;
+    object-fit: cover;
+}
+.hero h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.logo {
+    height: 120px;
+}
+main {
+  padding: 1rem;
+}
+
+.content-section {
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem;
+}
+
+.content-section h2 {
+  font-family: 'Inter', sans-serif;
+  color: var(--primary-color);
+  margin-top: 2rem;
+}
+
+.wireframe-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.wireframe-gallery figure {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.wireframe-gallery img {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+  
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+  
+nav li {
+    margin: 0.5rem;
+}
+  
+nav a, nav input, nav button {
+    color: var(--text-color);
+    background: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+  
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+}
+  
+.cta-buttons button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+  
+.lecture-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--bg-light);
+}
+  
+.lecture-cards article {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.lecture-cards img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+  
+.mission {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 1rem;
+}
+  
+.mission h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+  
+footer {
+    border-top: 10px solid var(--accent-color);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+  
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+  
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+@media (max-width: 600px) {
+    .cta-buttons, .lecture-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .header-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+}
+@media (max-width: 600px) {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .profile-card {
+      margin: 1rem 0 0 0;
+    }
+  
+    .hero-image img {
+      max-height: 250px;
+    }
+}
+  
+  
