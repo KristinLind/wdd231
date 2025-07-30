@@ -430,6 +430,10 @@ footer p {
     margin: 0.25rem 0;
     text-decoration: underline;
 }
+.footer img {
+    width: 24px;
+    height: 24px;
+}
 footer a {
     color: var(--card-background);
     text-decoration: underline;
@@ -766,6 +770,7 @@ highlight {
   
 .discover-card-grid {
     display: grid;
+    min-height: 100vh;
     gap: 1rem;
     padding: 1rem;
     grid-template-columns: 1fr;
@@ -869,4 +874,21 @@ highlight {
       margin-bottom: 0.5rem;
     }
 }
-        
+.visit-message {
+    opacity: 0;
+    transform: translateY(-5px);
+    animation: fadeIn 0.6s ease-out forwards;
+    background-color: #fff6e5;
+    border-left: 5px solid var(--accent-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+@keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+          
