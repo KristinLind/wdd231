@@ -1,0 +1,63 @@
+@media (min-width: 600px) and (max-width: 1400px) {
+    .discover-card-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        justify-items: center;
+        padding: 1rem;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .discover-card {
+        max-width: 700px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "title title"
+            "image content";
+        gap: 1rem;
+        align-items: start;
+        font-size: 1rem;
+    }
+    
+    .discover-card img {
+        grid-area: image;
+        width: 100%;
+        height: auto;
+        min-width: 150px;
+        min-height: 100px;
+        max-height: 220px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+    .discover-card-content {
+        grid-area: content;
+        grid-column: 2;
+    }
+    .discover-card h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+      
+    .discover-card .description,
+    .discover-card .location,
+    .discover-card .learn-more {
+        grid-column: 2;
+    }
+    .discover-card p.description {
+        margin-bottom: 1rem;
+    }
+    .discover-card p,
+    .discover-card a {
+        margin: 0.25rem 0;
+    }
+}
+  
