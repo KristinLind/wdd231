@@ -425,7 +425,7 @@ body footer {
     box-sizing: border-box;
     margin-top: 2rem;
     border-top: 3px solid var(--secondary-color);
-    min-height: 120px;
+    max-height: 200px;
 }
 
 .footer-left, .footer-center, .footer-right {
@@ -447,6 +447,10 @@ footer a {
 }
 footer a:hover {
     color: var(--secondary-color);
+}
+.footer-center {
+    padding: 0.5rem 0;
+    min-height: 60px;
 }
 highlight {
     color: var(--secondary-color);
