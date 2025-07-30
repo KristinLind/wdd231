@@ -82,4 +82,25 @@
         min-width: 0;
     }
 }
-
+@media (min-width: 768px) {
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(350px, 1fr));
+      gap: 2rem;
+      justify-content: center; 
+    }
+    .card {
+      font-size: 1rem;
+      padding: 2rem;
+    }
+    .card img {
+      max-height: 220px;
+      object-fit: cover;
+    }
+}
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+    
+  

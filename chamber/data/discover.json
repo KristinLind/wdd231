@@ -1,0 +1,74 @@
+{
+  "discover": [
+    {
+      "name": "The District at South Jordan",
+      "address": "11400 S Bangerter Highway, South Jordan, UT 84095",
+      "cost": "Free to explore; pay-per-activity",
+      "description": "A 120-acre development with shops, restaurants, cinema, and entertainment. Great for strolling and dining.",
+      "image": "images/district.webp"
+    },
+    {
+      "name": "Mulligan’s Golf & Games",
+      "address": "692 W 10600 S, South Jordan, UT 84095",
+      "cost": "Mini-golf ~$7–10; other activities vary",
+      "description": "Family fun center with mini‑golf, batting cages, and a driving range. Great for all ages.",
+      "image": "images/muligans.webp"
+    },
+    {
+      "name": "Ballpark at America First Square",
+      "address": "11400 S Bangerter Hwy, South Jordan, UT 84095",
+      "cost": "Varies by event; public space free to explore",
+      "description": "Home of the Salt Lake City Bees starting in 2025, this new stadium anchors a vibrant entertainment district featuring the Megaplex Theater, restaurants, bowling alley, and family-friendly amenities.",
+      "image": "images/bees.webp"
+    },
+    {
+      "name": "Gale Center of History & Culture",
+      "address": "10300 S Beckstead Ln, South Jordan, UT 84095",
+      "cost": "Free (donations welcome)",
+      "description": "Local museum showcasing South Jordan’s pioneer and cultural history.",
+      "image": "images/galecenter.webp"
+    },
+    {
+      "name": "South Jordan Fitness & Aquatic Center",
+      "address": "10866 S Redwood Rd, South Jordan, UT 84095",
+      "cost": "Day pass ~$5",
+      "description": "Community facility with pools, gym, classes, and wellness amenities.",
+      "image": "images/sjcenter.webp"
+    },
+    {
+      "name": "Jordan River Parkway Trail",
+      "address": "Trailheads near Redwood Rd, South Jordan, UT",
+      "cost": "Free",
+      "description": "Scenic trail for walking, biking, and wildlife viewing along the Jordan River.",
+      "image": "images/sjtrail.webp"
+    },
+    {
+      "name": "Oquirrh Mountain Utah Temple",
+      "address": "3270 W Daybreak Pkwy, South Jordan, UT 84009",
+      "cost": "Free to walk grounds",
+      "description": "Granite LDS temple surrounded by gardens and fountains, open for exterior visits.",
+      "image": "images/oquirrhtemple.webp"
+    },
+    {
+      "name": "Daybreak & Oquirrh Lake",
+      "address": "Daybreak Pkwy at Oquirrh Lake, South Jordan, UT 84009",
+      "cost": "Free; optional rentals available",
+      "description": "Community lake with walking paths, kayaking, fishing, and family fun in a beautiful setting.",
+      "image": "images/oquirrhlake.webp"
+    },
+    {
+      "name": "Ninja Kidz Action Park",
+      "address": "11617 S Parkway Plaza Dr, South Jordan, UT 84095",
+      "cost": "$15–20 per hour",
+      "description": "Indoor action park with ninja obstacle courses, trampolines, and arcade games.",
+      "image": "images/ninjakidz.webp"
+    },
+    {
+      "name": "Airborne Trampoline Park",
+      "address": "11400 S Bangerter Hwy, South Jordan, UT 84095",
+      "cost": "$10–15 per hour",
+      "description": "Trampoline park featuring aerial dodgeball, freestyle jump areas, and foam pits.",
+      "image": "images/airborne.webp"
+    }
+  ]
+}

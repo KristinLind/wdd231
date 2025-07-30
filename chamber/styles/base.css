@@ -757,6 +757,44 @@ highlight {
     font-size: 0.9rem;
     border-radius: 3px;
     cursor: pointer;
-  }
+}
   
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
   
+.card {
+    background: white;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.card button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color, #19535F);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.card button:hover {
+    background-color: var(--accent-color, #881e15);
+}
+      
