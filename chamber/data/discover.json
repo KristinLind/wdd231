@@ -11,9 +11,11 @@
     {
       "name": "Mulligan's Golf & Games",
       "address": "692 W 10600 S, South Jordan, UT 84095",
-      "cost": "Mini-golf ~$7–10; other activities vary",
-      "description": "Family fun center with mini‑golf, batting cages, and a driving range. Great for all ages.",
+      "cost": "Mini-golf ~$7-10; other activities vary",
+      "description": "Family fun center with mini-golf, batting cages, and a driving range. Great for all ages.",
       "image": "images/muligans.webp",
+      "width": "300",
+      "height": "250",
       "website": "https://sjc.utah.gov/1703/Mulligans/"
     },
     {
@@ -30,6 +32,8 @@
       "cost": "Free (donations welcome)",
       "description": "Local museum showcasing South Jordan's pioneer and cultural history.",
       "image": "images/galecenter.webp",
+      "width": "300",
+      "height": "250",
       "website": "https://sjc.utah.gov/336/The-Gale-Museum/"
     },
     {
