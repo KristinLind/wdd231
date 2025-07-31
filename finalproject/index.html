@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Dental Services</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Plan | Professional Dental Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/siteplan.css">
+  <link rel="stylesheet" href="styles/siteplan.css" />
 </head>
 <body>
   <header>
     <div class="header-content">
       <div class="title-block">
-        <h1>Professional Dental Services & Consulting Corp.</h1>
+        <img src="images/pdlogo.webp" alt="Professional Dental Services Logo" class="logo">
+        <div class="title-text">
+        <h1><a href="index.html">Professional Dental Services & Consulting Corp.</a></h1>
       </div>
       <div class="profile-card">
         <img src="images/profile.webp" alt="Stacy Doyle Lind Profile Image">
         <p class="profile-label">Stacy Doyle Lind, DMD</p>
       </div>
+    </div>
+  </header>
     <nav>
         <ul>
           <li><a href="#">Home</a></li>
@@ -37,10 +41,16 @@
     
       <section class="cta-buttons">
         <button>Schedule a Consultation</button>
-        <button>Download Professional CV</button>
+        <button id="cvBtn">Download Professional CV</button>
         <button>Explore Lecture Topics</button>
       </section>
-    
+      <div class="modal" id="cv-modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Dr. Lind's CV download is available <a href="cv.pdf" download>here</a>.</p>
+        </div>
+      </div>
+      
       <section class="lecture-cards">
         <article>
           <img src="images/cosmetic.webp" alt="Cosmetic Dentistry" />
@@ -79,6 +89,26 @@
         </ul>
         <p>&copy; 2025 Dr. Stacy Doyle Lind | All Rights Reserved</p>
       </footer>
+      <script>
+        const modal = document.getElementById("cv-modal");
+        const openBtn = document.getElementById("cvBtn");
+        const closeBtn = modal.querySelector(".close");
+      
+        openBtn.addEventListener("click", () => {
+          modal.style.display = "block";
+        });
+      
+        closeBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+      
+        window.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      </script>
+      
 </body>
 </html>
     
