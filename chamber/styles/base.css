@@ -778,6 +778,13 @@ highlight {
     border-radius: 3px;
     cursor: pointer;
 }
+main > h1 {
+    font-size: 1.8rem; /* Adjust as needed */
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 1rem auto;
+}
   
 .discover-card-grid {
     display: grid;
@@ -842,7 +849,7 @@ highlight {
 .discover-card button:hover {
     background-color: var(--accent-color, #881e15);
 }
-.discover-card learn-more {
+.discover-card .learn-more {
     display: block;
     text-align: center;
     margin-top: 0.75rem;

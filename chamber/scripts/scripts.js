@@ -24,10 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('./data/discover.json')
         .then(res => res.json())
         .then(data => {
-            const container = document.createElement('div');
+            const container = document.createElement('discoverCards');
+            container.innerHTML = "";
             container.classList.add('discover-card-grid');
             document.querySelector('main').appendChild(container);
-
+            
             data.discover.forEach((item, index) => {
                 const card = document.createElement('section');
                 card.classList.add('discover-card', 'delay1');
