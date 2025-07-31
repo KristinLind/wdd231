@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 card.innerHTML = `
         <h2>${item.name}</h2>
-        <img src="${item.image}" alt="${item.name}" width="300" height="200" class="card-img" ${index === 0 ? '' : 'loading="lazy"'}>
+        <img src="${item.image}" alt="${item.name}" width="300" height="200" class="card-img" ${index === "Muligan's Golf & Games" ? '' : 'loading="lazy"'}>
         <div class="discover-card-content">
           <p class="description">${item.description}</p>
           <p class="cost"><strong>Cost:</strong> ${item.cost}</p>

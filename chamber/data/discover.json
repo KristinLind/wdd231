@@ -9,7 +9,7 @@
       "website": "https://storestip.com/mall-locator/united-states/utah/south-jordan/the-district/"
     },
     {
-      "name": "Mulligan’s Golf & Games",
+      "name": "Mulligan's Golf & Games",
       "address": "692 W 10600 S, South Jordan, UT 84095",
       "cost": "Mini-golf ~$7–10; other activities vary",
       "description": "Family fun center with mini‑golf, batting cages, and a driving range. Great for all ages.",
@@ -28,7 +28,7 @@
       "name": "Gale Center of History & Culture",
       "address": "10300 S Beckstead Ln, South Jordan, UT 84095",
       "cost": "Free (donations welcome)",
-      "description": "Local museum showcasing South Jordan’s pioneer and cultural history.",
+      "description": "Local museum showcasing South Jordan's pioneer and cultural history.",
       "image": "images/galecenter.webp",
       "website": "https://sjc.utah.gov/336/The-Gale-Museum/"
     },
@@ -67,7 +67,7 @@
     {
       "name": "Ninja Kidz Action Park",
       "address": "11617 S Parkway Plaza Dr, South Jordan, UT 84095",
-      "cost": "$15–20 per hour",
+      "cost": "$15-20 per hour",
       "description": "Indoor action park with ninja obstacle courses, trampolines, and arcade games.",
       "image": "images/ninjakidz.webp",
       "website": "https://www.ninjakidzparks.com/pricing/ninjakidz-101-southjordan/"
@@ -75,7 +75,7 @@
     {
       "name": "Airborne Trampoline Park",
       "address": "11400 S Bangerter Hwy, South Jordan, UT 84095",
-      "cost": "$10–15 per hour",
+      "cost": "$10-15 per hour",
       "description": "Trampoline park featuring aerial dodgeball, freestyle jump areas, and foam pits.",
       "image": "images/airborne.webp",
       "website": "https://airbornesports.com/hours-and-pricing/"
