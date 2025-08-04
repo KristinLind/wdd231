@@ -45,5 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "none";
       }
     });
+});fetch('data/cv.json')
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+  // Use the CV data here
+  console.log(data); // Or render into modal
+})
+.catch(error => {
+  console.error('Error loading CV data:', error);
+  alert('Error loading CV data. Please try again later.');
 });
+
   
