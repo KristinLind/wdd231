@@ -103,25 +103,9 @@
         </div>
         <p>&copy; 2025 Dr. Stacy Doyle Lind | All Rights Reserved</p>
       </footer>
-      <script>
-        const modal = document.getElementById("cv-modal");
-        const openBtn = document.getElementById("cvBtn");
-        const closeBtn = modal.querySelector(".close");
-      
-        openBtn.addEventListener("click", () => {
-          modal.style.display = "block";
-        });
-      
-        closeBtn.addEventListener("click", () => {
-          modal.style.display = "none";
-        });
-      
-        window.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            modal.style.display = "none";
-          }
-        });
-      </script>
+      <script src="scripts/scripts.js" defer></script>
+      <script src="scripts/cv-modal.js" defer></script>
+
       
 </body>
 </html>
