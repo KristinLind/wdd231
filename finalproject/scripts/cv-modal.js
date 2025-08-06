@@ -1,64 +1,134 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("cv-modal");
-    const openBtn = document.getElementById("cvBtn");
-    if (!modal || !openBtn) return;
-    const closeBtn = modal.querySelector(".close");
-    const modalContent = modal.querySelector(".modal-content");
+    const cvModal = document.getElementById("cv-modal");
+    const openCvBtn = document.getElementById("cvBtn");
   
-    openBtn.addEventListener("click", async () => {
-      modal.style.display = "block";
+    if (cvModal && openCvBtn) {
+      const modalContent = cvModal.querySelector(".modal-content");
   
-      try {
-        const response = await fetch("data/cv.json");
-        const data = await response.json();
+      openCvBtn.addEventListener("click", async () => {
+        cvModal.style.display = "block";
   
-        modalContent.innerHTML = `
-          <span class="close">&times;</span>
-          <h2>${data.full_name}</h2>
-          <blockquote>${data.quote}</blockquote>
-          <p><strong>Bio:</strong> ${data.bio}</p>
-          <p><strong>Education:</strong></p>
-          <ul>
-            ${data.education.map(item => `<li>${item.degree}, ${item.institution} (${item.year})</li>`).join('')}
-          </ul>
-          <p><strong>Awards:</strong> ${data.awards.join(', ')}</p>
-          <p><strong>Certifications:</strong> ${data.certifications.join(', ')}</p>
-        `;
+        try {
+          const response = await fetch("data/cv.json");
+          const data = await response.json();
   
-        // Reattach close button since modalContent was replaced
-        modal.querySelector(".close").addEventListener("click", () => {
-          modal.style.display = "none";
-        });
+          modalContent.innerHTML = `
+            <span class="close">&times;</span>
+            <h2>${data.fullName}</h2>
+            <blockquote>${data.quote}</blockquote>
+            <p><strong>Bio:</strong> ${data.bio}</p>
+            <h3>Education</h3>
+            <ul>${data.education.map(item => `<li>${item.program}, ${item.institution}</li>`).join('')}</ul>
+            <h3>Degrees</h3>
+            <ul>${data.degrees.map(degree => `
+              <li>${degree.program}, ${degree.institution}
+              ${degree.details ? `<ul>${degree.details.map(detail => `<li>${detail}</li>`).join('')}</ul>` : ''}</li>
+            `).join('')}</ul>
+            <h3>Honors</h3>
+            <ul>${data.honors.map(honor => `<li>${honor}</li>`).join('')}</ul>
+            <h3>Certificates & Programs</h3>
+            <ul>${data.certificates_and_programs.map(cert => `
+              <li><strong>${cert.title}</strong> - ${cert.institution || cert.instructor || cert.location || "N/A"}<br>
+              ${cert.description}</li>
+            `).join('')}</ul>
+          `;
   
-      } catch (error) {
-        modalContent.innerHTML = `
-          <span class="close">&times;</span>
-          <p>Error loading CV data. Please try again later.</p>
-        `;
-        console.error("Error fetching CV:", error);
-      }
-    });
+          modalContent.querySelector(".close").addEventListener("click", () => {
+            cvModal.style.display = "none";
+          });
   
-    // Close modal when clicking outside
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-});fetch('data/cv.json')
-.then(response => {
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json();
-})
-.then(data => {
-  // Use the CV data here
-  console.log(data); // Or render into modal
-})
-.catch(error => {
-  console.error('Error loading CV data:', error);
-  alert('Error loading CV data. Please try again later.');
-});
+          window.addEventListener("click", (e) => {
+            if (e.target === cvModal) {
+              cvModal.style.display = "none";
+            }
+          });
+        } catch (error) {
+          modalContent.innerHTML = `<p>Error loading CV data. Please try again later.</p>`;
+          console.error("Error fetching CV:", error);
+        }
+      });
+    }
 
-  
+  const consultationModal = document.getElementById("consultationModal");
+  const openConsultationBtn = document.getElementById("openConsultationModal");
+  const closeConsultationBtn = document.getElementById("closeConsultation");
+
+  if (consultationModal && openConsultationBtn && closeConsultationBtn) {
+    openConsultationBtn.addEventListener("click", () => {
+      consultationModal.style.display = "block";
+    });
+
+    closeConsultationBtn.addEventListener("click", () => {
+      consultationModal.style.display = "none";
+    });
+
+    const consultationForm = document.getElementById("consultationForm");
+    const consultationConfirmation = document.getElementById("consultationConfirmation");
+
+    if (consultationForm && consultationConfirmation) {
+      consultationForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        consultationForm.style.display = "none";
+        consultationConfirmation.style.display = "block";
+
+        setTimeout(() => {
+          consultationForm.reset();
+        }, 500);
+      });
+    }
+
+    closeConsultationBtn.addEventListener("click", () => {
+      consultationModal.style.display = "none";
+      consultationForm.style.display = "block";
+      consultationConfirmation.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === consultationModal) {
+        consultationModal.style.display = "none";
+      }
+    });
+  } else {
+    console.error("❌ Consultation modal setup failed due to missing elements.");
+  }
+
+  const lectureModal = document.getElementById("lectureModal");
+  const closeLectureBtn = document.getElementById("closeLectureModal");
+  const lectureDetailsContainer = document.getElementById("lectureDetailsContainer");
+  const exploreLecturesBtn = document.getElementById("exploreLecturesBtn");
+
+  if (exploreLecturesBtn && lectureModal && lectureDetailsContainer) {
+    exploreLecturesBtn.addEventListener("click", async () => {
+      try {
+        const response = await fetch("data/lectures.json");
+        const data = await response.json();
+
+        lectureDetailsContainer.innerHTML = data.map(lecture => `
+          <div class="lecture-detail-block">
+            <h3>${lecture.title}</h3>
+            <p><strong>${lecture.description}</strong></p>
+            <p><em>Category: ${lecture.category}</em></p>
+            ${lecture.details ? `<ul>${lecture.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+            <hr>
+          </div>
+        `).join('');
+
+        lectureModal.style.display = "block";
+      } catch (err) {
+        lectureDetailsContainer.innerHTML = `<p>Error loading lecture topics.</p>`;
+        console.error(err);
+      }
+    });
+
+    closeLectureBtn.addEventListener("click", () => {
+      lectureModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === lectureModal) {
+        lectureModal.style.display = "none";
+      }
+    });
+  }
+});

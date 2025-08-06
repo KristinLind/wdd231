@@ -1,15 +1,82 @@
-fetch('lectures.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.querySelector('#lectureCards');
-    data.forEach(topic => {
-      const card = document.createElement('article');
-      card.innerHTML = `
-        <img src="${topic.image}" alt="${topic.title}">
-        <h3>${topic.title}</h3>
-        <p>${topic.description}</p>
-        <p><strong>Category:</strong> ${topic.category}</p>
-      `;
-      container.appendChild(card);
-    });
-});
+[
+    {
+      "title": "Cosmetic Dentistry & Smile Design",
+      "description": "Advanced esthetic techniques using modern composites, veneers, and digital smile simulations.",
+      "image": "images/lecture-cosmetic.webp",
+      "category": "Cosmetic Dentistry",
+      "details": [
+        "Hands-on composite restoration techniques",
+        "Soft tissue grafting and suturing protocols",
+        "Cosmetic temporization for full-mouth cases",
+        "Shade selection and layering for esthetics",
+        "Digital smile design and facial esthetic analysis"
+      ]
+    },
+    {
+      "title": "Implantology & Surgical Protocols",
+      "description": "Guided surgical placement, bone grafting, and restoration workflows using implant systems like Nobel and BioHorizons.",
+      "image": "images/lecture-implants.webp",
+      "category": "Implantology",
+      "details": [
+        "CT scan interpretation and implant planning",
+        "Hands-on implant placement on bone models",
+        "Restorative protocols for implant-supported crowns and bridges",
+        "Bone grafting techniques: ridge expansion, lateral augmentation, and sinus lifts",
+        "Overcoming soft tissue and anatomical challenges"
+      ]
+    },
+    {
+      "title": "Bio-Esthetics & Oriognathic Function",
+      "description": "Functional occlusion and joint-based smile design based on neuromuscular harmony and TMJ protocols.",
+      "image": "images/lecture-bioesthetics.webp",
+      "category": "TMJ / Occlusion",
+      "details": [
+        "Vertical dimension of occlusion restoration",
+        "Joint-centered diagnosis and treatment planning",
+        "Rehabilitation of patients with TMD symptoms",
+        "Using splints, occlusal guards, and functional wax-ups",
+        "Integrating bioesthetic design into full-arch and full-mouth cases"
+      ]
+    },
+    {
+      "title": "CAD/CAM and Digital Workflows",
+      "description": "Incorporating 3Shape, CEREC, and 3D printing for streamlined restorative dentistry.",
+      "image": "images/lecture-cadcam.webp",
+      "category": "Technology",
+      "details": [
+        "Digital scanning techniques and accuracy tips",
+        "Hands-on with CAD design software (3Shape, CEREC)",
+        "In-house milling vs. lab outsourcing decisions",
+        "3D printing applications for surgical guides and temporaries",
+        "Workflow integration: from scan to delivery"
+      ]
+    },
+    {
+        "title": "Periodontal Tissue Grafting Techniques",
+        "description": "Hands-on training in soft tissue grafting procedures for root coverage, ridge preservation, and esthetic outcomes.",
+        "image": "images/lecture-grafting.webp",
+        "category": "Surgical / Periodontics",
+        "details": [
+          "Indications and contraindications for connective tissue and free gingival grafts",
+          "Harvesting techniques: palatal and tuberosity donor sites",
+          "Tunneling, envelope, and coronally advanced flap approaches",
+          "Suturing techniques for optimal esthetic healing",
+          "Hands-on grafting practice using pig jaws or synthetic models",
+          "Managing complications and enhancing patient outcomes"
+        ]
+    },
+    {
+      "title": "Practice Management & Growth",
+      "description": "Efficient systems for billing, HR, patient satisfaction, and transitioning to group practice models.",
+      "image": "images/lecture-practice.webp",
+      "category": "Business",
+      "details": [
+        "Implementing efficient scheduling and billing systems",
+        "Improving patient experience and retention",
+        "Delegation and team accountability structures",
+        "Transitioning from solo to group or DSO models",
+        "Strategic marketing and growth metrics for dental practices"
+      ]
+    }
+]
+  

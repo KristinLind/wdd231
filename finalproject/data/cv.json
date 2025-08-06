@@ -4,20 +4,9 @@
       "phone": "720-331-0410",
       "email": "stace.lind@comcast.net"
     },
-"quote": "I would rather be measured by how I treat others—especially those outside my own frame of reference—than by a list of credentials printed on a piece of paper.",
-
-"bio": "Dr. Stacy Doyle Lind, DMD—affectionately known as 'Stace'—is a respected clinician, educator, and innovator with over 30 years of experience in dentistry, healthcare 
-    leadership, and academic scholarship. He built a multimillion-dollar dental practice in Centennial, Colorado, featuring an in-house implant milling lab and clinical training center. 
-    After selling his practice to Heartland Dental, he became the lead doctor and mentor for Professional Dental, overseeing the development and clinical quality of 22 practices.
-    Dr. Lind's academic background is expansive and interdisciplinary. In addition to his dental credentials and advanced training in implantology, prosthodontics, sedation, and esthetics, 
-    he holds a Master of Business Administration (MBA) in Healthcare Administration, a Master’s in Public Health (MPH), and a Master's degree in Biblical Studies. He is also currently 
-    completing a Ph.D. in Psychology, with a focus on human behavior, cognition, and cultural context. He earned certification in Biblical Hebrew and Hebraic Studies from Hebrew University 
-    in Jerusalem and completed 29 courses in depth psychology through the Jungian Institute and Saybrook University. He also holds a Certificate in Family History and Genealogy from BYU-Idaho.
-    Now based in Utah, Dr. Lind continues to lecture globally and consult with dental manufacturers, researchers, and educators. He is actively seeking new opportunities in healthcare education, 
-    R&D, sales strategy, and behavioral consulting—where his unique blend of clinical experience, business acumen, and human-centered insight can contribute to industry innovation and patient care 
-    excellence."
-
-"education": [
+    "quote": "I would rather be measured by how I treat others—especially those outside my own frame of reference—than by a list of credentials printed on a piece of paper.",
+    "bio": "Dr. Stacy Doyle Lind, DMD—affectionately known as 'Stace'—is a respected clinician, educator, and innovator with over 30 years of experience in dentistry, healthcare leadership, and academic scholarship. He built a multimillion-dollar dental practice in Centennial, Colorado, featuring an in-house implant milling lab and clinical training center. After selling his practice to Heartland Dental, he became the lead doctor and mentor for Professional Dental, overseeing the development and clinical quality of 22 practices. Dr. Lind's academic background is expansive and interdisciplinary. In addition to his dental credentials and advanced training in implantology, prosthodontics, sedation, and esthetics, he holds a Master of Business Administration (MBA) in Healthcare Administration, a Master’s in Public Health (MPH), and a Master's degree in Biblical Studies. He is also currently completing a Ph.D. in Psychology, with a focus on human behavior, cognition, and cultural context. He earned certification in Biblical Hebrew and Hebraic Studies from Hebrew University in Jerusalem and completed 29 courses in depth psychology through the Jungian Institute and Saybrook University. He also holds a Certificate in Family History and Genealogy from BYU-Idaho. Now based in Utah, Dr. Lind continues to lecture globally and consult with dental manufacturers, researchers, and educators. He is actively seeking new opportunities in healthcare education, R&D, sales strategy, and behavioral consulting—where his unique blend of clinical experience, business acumen, and human-centered insight can contribute to industry innovation and patient care excellence.",
+    "education": [
       {
         "institution": "Stanford University",
         "program": "AI-Driven Leadership Certificate"
@@ -31,7 +20,6 @@
         "program": "Regulatory Affairs (FDA focus)"
       }
     ],
-  
     "degrees": [
       {
         "institution": "University of Louisville School of Dentistry",
@@ -64,7 +52,6 @@
         ]
       }
     ],
-  
     "honors": [
       "F.I.C.D. - Fellow, International College of Dentists",
       "F.A.D.I. - Fellow, Academy of Dentistry International",
@@ -78,7 +65,7 @@
       "Phi Kappa Phi - Academic Excellence Society",
       "Delta Omega - Public Health Honor Society"
     ],
-    {
+  
         "certificates_and_programs": [
           {
             "title": "Family History and Genealogy Certificate",
@@ -160,8 +147,7 @@
             "institution": "Biolase",
             "description": "Completed beginner to advanced training in diode and erbium laser applications for periodontal, surgical, and soft tissue procedures in general dentistry."
           }
-        ]
-      }
+        ],
 "teaching_experience": {
   "faculty_roles": [
     {
@@ -239,7 +225,7 @@
       }
     ]
   }
-}
+},
 "research_experience": {
   "implant_consulting": [
     "Nobel",
@@ -306,4 +292,4 @@
     }
   ]
 }
-
+}

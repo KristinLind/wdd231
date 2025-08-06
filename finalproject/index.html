@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="description" content="Explore the professional dental consulting services, lectures, and academic background of Dr. Stacy Doyle Lind, DMD.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professional Dental Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/siteplan.css" />
+<!--  <link rel="stylesheet" href="styles/siteplan.css" /> -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/medium.css">
+  <link rel="stylesheet" href="styles/large.css">
 </head>
 <body>
   <header>
-    <div class="header-content">
+    <div class="header-container">
       <div class="title-block">
         <img src="images/pdlogo.webp" alt="Professional Dental Services Logo" class="logo">
         <div class="title-text">
-        <h1><a href="index.html">Professional Dental Services & Consulting Corp.</a></h1>
+          <h1><a href="index.html">Professional Dental Services & Consulting Corp.</a></h1>
+        </div>
       </div>
+  
       <div class="profile-card">
         <img src="images/profile.webp" alt="Stacy Doyle Lind Profile Image">
         <p class="profile-label">Stacy Doyle Lind, DMD</p>
@@ -23,63 +29,85 @@
   </header>
     <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#lectures">Lectures</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><input type="search" placeholder="Search..." /><button aria-label="Search">🔍</button></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="lectures.html">Lectures</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav>
-</header>
+    </nav>
+  </header>
 
   <main>
     <section class="hero">
-        <h2>Global Expertise in Dentistry, Practice Management, and Education</h2>
-        <img src="images/hero.webp" alt="Rocky Mountain Dentist" />
-      </section>
-    <section class="cta-buttons">
-        <button>Schedule a Consultation</button>
-        <button id="cvBtn">Download Professional CV</button>
-        <button>Explore Lecture Topics</button>
-      </section>
-      <div class="modal" id="cv-modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Dr. Lind's CV download is available <a href="cv.pdf" download>here</a>.</p>
-        </div>
-      </div>
-      
-      <section class="lecture-cards">
-        <article>
-          <img src="images/cosmetic.webp" alt="Cosmetic Dentistry" />
-          <h3>Cosmetic Dentistry</h3>
-          <p>Advanced esthetic techniques for natural-looking results.</p>
-        </article>
-        <article>
-          <img src="images/prosthodontics.webp" alt="Prosthodontics" />
-          <h3>Prosthodontics</h3>
-          <p>Restorative solutions for function, longevity, and aesthetics.</p>
-        </article>
-        <article>
-          <img src="images/tmj.webp" alt="Bio-Esthetics & TMJ" />
-          <h3>Bio-Esthetics & TMJ</h3>
-          <p>Functional and aesthetic harmony in occlusion and joint health.</p>
-        </article>
-        <article>
-          <img src="images/implant.webp" alt="Implantology" />
-          <h3>Implantology and Polymer Chemistry</h3>
-          <p>Scientific innovation in dental materials and implants.</p>
-        </article>
-      </section>
+      <h2>Global Expertise in Dentistry, Practice Management, and Education</h2>
+      <img src="images/hero.webp" alt="Rocky Mountain Dentist" />
+    </section>
     
+    <section class="cta-buttons">
+      <button id="openConsultationModal">Schedule a Consultation</button>
+      <button id="cvBtn" type="button">Download Professional CV</button>
+      <button id="exploreLecturesBtn" type="button">Explore Lecture Topics</button>
+    </section>
+    
+    <div class="modal" id="cv-modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- JavaScript will inject CV content here -->
+      </div>
+    </div>
+    
+    <h2 class="section-title">Lecture Topics</h2>
+    <section class="lecture-cards">
+      <article class="lecture-card">
+        <img src="images/cosmetic.webp" alt="Cosmetic Dentistry" />
+        <div class="lecture-text">
+          <h3>Cosmetic Dentistry</h3>
+          <p>
+            Dr. Lind lectures on composite restorations using advanced polymer chemistry, focusing on selecting the most esthetic and durable materials for natural-looking smiles. His presentations explore techniques that enhance esthetics, longevity, and patient satisfaction.
+          </p>
+        </div>
+      </article>
+    
+      <article class="lecture-card">
+        <img src="images/prosthodontics.webp" alt="Prosthodontics" />
+        <div class="lecture-text">
+          <h3>Prosthodontics</h3>
+          <p>
+            Full-mouth restorative solutions, including crowns, bridges, and occlusal rehabilitation, are key topics in Dr. Lind’s prosthodontic lectures. He emphasizes function and longevity in cases involving significant wear, bruxism, or bite collapse.
+          </p>
+        </div>
+      </article>
+    
+      <article class="lecture-card">
+        <img src="images/tmj.webp" alt="Bio-Esthetics & TMJ" />
+        <div class="lecture-text">
+          <h3>Bio-Esthetics & TMJ</h3>
+          <p>
+            Drawing on orognathic and bioesthetic principles, Dr. Lind discusses vertical dimension opening and treatment planning for joint stability. He presents clinical protocols for addressing TMJ breakdown and restoring functional and esthetic harmony.
+          </p>
+        </div>
+      </article>
+    
+      <article class="lecture-card">
+        <img src="images/implant.webp" alt="Implantology" />
+        <div class="lecture-text">
+          <h3>Implantology and Polymer Chemistry</h3>
+          <p>
+            Dr. Lind teaches implant-supported restoration strategies—from single units to quadrant and full-arch cases. He highlights materials science and the integration of implant planning with esthetics and occlusion for long-term success.
+          </p>
+        </div>
+      </article>
+    </section>
+        
       <section class="mission">
         <div class="mission-card">
-        <h2>Transforming Practices, Mentoring Minds, Advancing Dental Science</h2>
-        <p>Dr. Stacy Lind brings over 30 years of clinical and academic leadership, empowering professionals and guiding modern dental practices across the globe.</p>
-      </div>
+          <h2>Our Mission</h2>
+          <p>
+            At Professional Dental Services & Consulting Corp., our mission is to empower dental professionals around the globe through education, innovation, and personalized support. We are committed to excellence in every lecture, service, and consultation we provide.
+          </p>
+        </div>
       </section>
-    
+      
       <footer>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/stacy-lind-078b252a7/" target="_blank" aria-label="LinkedIn">
@@ -105,8 +133,40 @@
       </footer>
       <script src="scripts/scripts.js" defer></script>
       <script src="scripts/cv-modal.js" defer></script>
+      <script src="scripts/cards.js" defer></script>
 
-      
+<div id="consultationModal" class="modal">
+  <button class="close" id="closeConsultation">&times;</button>
+  <h2>Schedule a Consultation</h2>
+  <form id="consultationForm">
+    <label for="consultName">Name:</label>
+    <input type="text" id="consultName" name="consultName" required>
+
+    <label for="consultEmail">Email:</label>
+    <input type="email" id="consultEmail" name="consultEmail" required>
+
+    <label for="consultDate">Preferred Date:</label>
+    <input type="date" id="consultDate" name="consultDate">
+
+    <label for="consultMessage">Message:</label>
+    <textarea id="consultMessage" name="consultMessage" rows="4" placeholder="Let us know your availability or any questions."></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+  <div id="consultationConfirmation" style="display:none; margin-top: 1rem; color: green;">
+    ✅ Thank you for submitting the form. We will get back to you with possible dates in 24 hours.<br>
+    📞 Please call if you have not heard anything before that time: <strong>720-331-0410</strong>.
+  </div>
+</div>
+<div id="lectureModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeLectureModal">&times;</span>
+    <h2>Lecture Topic Details</h2>
+    <div id="lectureDetailsContainer">
+      <!-- JS will populate here -->
+    </div>
+  </div>
+</div>
 </body>
 </html>
     
