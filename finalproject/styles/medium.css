@@ -107,18 +107,31 @@
     }
 }    
 @media (min-width: 600px) {
-    .lectures-page .lecture-card {
+    .lectures-main .lecture-card {
       flex-direction: row;
+      display: flex;
+      align-items: stretch;
+      gap: 1rem;
     }
   
-    .lectures-page .lecture-card img {
-      width: 40%;
+    .lectures-main .lecture-card img {
+      width: 60%;
       height: auto;
       object-fit: cover;
-      border-right: 1px solid var(--accent-color3);
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
     }
   
-    .lectures-page .lecture-content {
-      padding: 1rem 2rem;
+    .lectures-main .lecture-content {
+        display: flex;
+        padding: 1rem;
+        width: 60%;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media (max-width: 600px) {
+    .lecture-gallery {
+      grid-template-columns: 1fr;
     }
 }
