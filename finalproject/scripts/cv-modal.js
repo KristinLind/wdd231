@@ -132,3 +132,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-open]');
+  if (!trigger) return;
+  const sel = trigger.dataset.open;
+  const modal = document.querySelector(sel);
+  if (!modal) return;
+  modal.style.display = 'block';
+  document.documentElement.classList.add('no-scroll'); // optional
+  modal.querySelector('[data-close]')?.focus();
+});
+
+
+document.addEventListener('click', (e) => {
+  if (e.target.matches('[data-close]') || e.target.classList.contains('modal')) {
+    e.target.closest('.modal').style.display = 'none';
+    document.documentElement.classList.remove('no-scroll');
+  }
+});
+

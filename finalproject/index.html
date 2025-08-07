@@ -31,7 +31,6 @@
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="lectures.html">Lectures</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
   </header>
@@ -43,9 +42,14 @@
     </section>
     
     <section class="cta-buttons">
-      <button id="openConsultationModal">Schedule a Consultation</button>
-      <button id="cvBtn" type="button">Download Professional CV</button>
-      <button id="exploreLecturesBtn" type="button">Explore Lecture Topics</button>
+      <button class="btn" data-open="#consultationModal"
+              aria-haspopup="dialog" aria-controls="consultationModal">
+        Schedule a Consultation
+      </button>
+      <button class="btn" id="cvBtn" type="button">Download Professional CV</button>
+      <button class="btn" id="exploreLecturesBtn" type="button">
+        Explore Lecture Topics
+      </button>
     </section>
     
     <div class="modal" id="cv-modal">
