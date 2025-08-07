@@ -17,19 +17,22 @@ body {
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 10px solid var(--accent-color);
 }
   
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 1rem 1rem 0;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
     gap: 1rem;
 }
+
 header a {
     color: var(--secondary-color);
     text-decoration: none;
@@ -37,14 +40,6 @@ header a {
   
 header a:hover {
     text-decoration: underline;
-}
-  
-.title-block {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-grow: 1;
-    min-width: 0;
 }
   
 .logo {
@@ -56,28 +51,28 @@ header a:hover {
 }
   
 .title-text {
-    min-width: 0;
-    flex: 1;
     text-align: center;
 }
   
-.title-block h1 {
+.title-text p {
+    margin: 0;
     font-family: 'Inter', sans-serif;
-    font-size: 1.8rem;
-    margin: 0.5rem 0;
+    font-size: 2rem;
+    font-weight: bold;
     text-align: center;
-    text-decoration: none;
     color: var(--secondary-color);
 }
-.title-block h1 a:hover {
+  
+.title-text p a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: inline-block;
+}
+  
+.title-text p a:hover {
     text-decoration: underline;
 }
-.title-block h2,
-.title-block .byline {
-    text-align: center;
-    font-size: 1.8rem;
-    margin: 0;
-}
+  
 .profile-card {
     text-align: center;
     margin-right: 1rem;
@@ -95,6 +90,9 @@ header a:hover {
     font-weight: bold;
     color: white;
 } 
+.logo {
+    height: 120px;
+}
 .hero img {
     width: 100%;
     max-width: 100%;
@@ -111,9 +109,7 @@ header a:hover {
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
-.logo {
-    height: 120px;
-}
+
 main {
   padding: 1rem;
 }
