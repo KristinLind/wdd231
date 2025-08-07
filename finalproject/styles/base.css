@@ -225,20 +225,41 @@ main {
 .cta-buttons {
     display: flex;
     flex-wrap: wrap;
+    gap: 1.25rem;
     justify-content: center;
-    gap: 1rem;
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
+    padding: 0 1rem;
 }
   
+.cta-buttons a,
 .cta-buttons button {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 0.9rem 1.5rem;
+    border-radius: 10px;
+    border: 0;
+    text-decoration: none;
+    font: 600 1rem/1 'Inter', sans-serif;
+    display: inline-block;
+    transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+    box-shadow: 0 2px 0 rgba(0,0,0,.25);
+}
+  
+.cta-buttons a:hover,
+.cta-buttons button:hover {
+    background: #a6291e; /* a touch lighter than accent */
+}
+  
+.cta-buttons a:active,
+.cta-buttons button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 rgba(0,0,0,.25) inset;
+}
+  
+.cta-buttons a:focus-visible,
+.cta-buttons button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--accent-color);
 }
 .section-title {
     font-size: 2rem;
@@ -328,6 +349,9 @@ footer a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+html { 
+    overflow-y: scroll; 
 }
 
 .modal {
@@ -736,6 +760,20 @@ footer a {
     color: var(--primary-color);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+}
+#consltationModal .modal-content,
+#consultationModal {
+    column-count:1 !important;
+}
+#consultationModal form {
+    display: block !important;
+    text-align: left;
+}
+#consultationModal form > * {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    margin: 0 0 0.9rem 0;
 }
   
  
