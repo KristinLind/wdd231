@@ -166,6 +166,11 @@ nav a {
     transition: transform 0.3s ease, background .2s ease, color .2s ease;
     display: inline-block;
 }
+nav a:active {
+    background: var(--accent-color);
+    color: white;
+    font-weight: bold;
+}
 nav a[aria-current="page"] {
     background-color: var(--accent-color);
     color: white;
