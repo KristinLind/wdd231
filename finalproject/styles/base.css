@@ -711,7 +711,6 @@ html {
     justify-content: center;
     padding: 2rem 1rem;
 }
-  
 .lecture-hero-box {
     background-color: var(--primary-color);
     color: white;
@@ -721,17 +720,14 @@ html {
     text-align: center;
     box-shadow: 2px 4px 12px var(--accent-color);
 }
-  
 .lecture-hero-box h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
-  
 .lecture-hero-box p {
     font-size: 1.1rem;
     line-height: 1.6;
-}
-  
+}  
 .lecture-intro-box {
     animation: fadeInUp 0.8s ease-out;
 }  
@@ -793,6 +789,18 @@ html {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
+@media (max-width: 600px) {
+article.lecture-card {
+      padding: 1rem; /* space inside card */
+}
+  
+article.lecture-card h2,
+article.lecture-card p {
+      padding-left: 0;  /* keep headings flush inside padding */
+      padding-right: 0;
+    }
+}
+  
 #consltationModal .modal-content,
 #consultationModal {
     column-count:1 !important;
