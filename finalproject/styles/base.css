@@ -33,50 +33,15 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.hamburger { display:none; }
-.logo { width: clamp(64px, 9vw, 120px); height: auto; }
-.profile-card img { width: clamp(84px, 12vw, 120px); height: auto; }
-header a {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
-  
-header a:hover {
-    text-decoration: underline;
-}
   
 .logo {
+    width: clamp(64,9vw, 120px);
     margin-top: 0.5rem;
     width: 80px;
     height: 80px;
     object-fit: contain;
-    margin-left: 2rem;
+    margin:0.5rem 0 0 2rem;
 }
-  
-.title-text {
-    text-align: center;
-}
-  
-.title-text p {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    color: var(--secondary-color);
-}
-  
-.title-text p a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    display: inline-block;
-    font-size: clamp(1.2rem, 4vw, 2rem);
-}
-  
-.title-text p a:hover {
-    text-decoration: underline;
-}
-  
 .profile-card {
     display: flex;
     flex-direction: column;
@@ -86,7 +51,9 @@ header a:hover {
     overflow-wrap: break-word;
 
 }
+
 .profile-card img {
+    width: clamp(84,12vw, 120px);
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -100,11 +67,42 @@ header a:hover {
     font-weight: bold;
     color: white;
 } 
-.logo {
-    width: 120px;
-    height: 120px;
-    padding: 1rem;
+header a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}  
+header a:hover {
+    text-decoration: underline;
+}  
+.title-text {
+    text-align: center;
 }
+.title-text p {
+    margin: 0;
+    font: 700 2rem 'Inter', sans-serif;
+    text-align: center;
+    color: var(--secondary-color);
+}  
+.title-text p a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+}  
+.title-text p a:hover {
+    text-decoration: underline;
+}
+.hamburger{
+    display:none;
+    background:none;
+    border:0;
+    color:var(--primary-color);
+    cursor:pointer;
+    font-size:1.5rem;
+    font-family:verdana;
+  }
+  .hamburger::before{ content:"\2630"; font-size:2rem; color:#fff; }
+  .hamburger.show::before{ content:"\00D7"; }
 .hero {
     position: relative;
     text-align: center;
@@ -125,8 +123,7 @@ img {
 }
 .hero h1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    inset: 50% auto auto 50%;
     transform: translate(-50%, -50%);
     color: var(--primary-color);
     font-size: clamp(1.2rem, 4vw, 2rem);
@@ -135,15 +132,13 @@ img {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 0.5rem .9rem;
     border-radius: 6px;
-}
-  
+}  
 .hero h2 {
     font-size: .5rem;
     text-align: center;
     color: var(--primary-color);
     margin-bottom: 1rem;
-}
-    
+}    
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -173,48 +168,124 @@ nav a[aria-current="page"] {
     background-color: var(--accent-color);
     color: white;
     font-weight: bold;
-}
-    
-nav a:hover {
+}    
+nav a:hover,
+nav a.active {
     background-color: var(--accent-color);
     color: white;
     transform: scale(1.05);
 }
-nav a.active {
-    background-color: var(--primary-color);
-    color: white;
-    font-weight: bold;
-}
-      
 nav a, nav input, nav button {
     color: var(--text-color);
     background: white;
     padding: 0.5rem 1rem;
-    border: none;
+    border: 0;
     border-radius: 5px;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
 }
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    padding: 0 1rem;
+    margin-top: 1.5rem;
+}
+  
+.cta-buttons a,
+.cta-buttons button {
+    background: var(--accent-color);
+    color: #fff;
+    padding: 0.9rem 1.5rem;
+    border-radius: 10px;
+    border: 0;
+    text-decoration: none;
+    font: 600 1rem/1 'Inter', sans-serif;
+    display: inline-block;
+    transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+    box-shadow: 0 2px 0 rgba(0,0,0,.25);
+}  
+.cta-buttons a:hover,
+.cta-buttons button:hover {
+    background: #a6291e; /* a touch lighter than accent */
+}
+.cta-buttons a:active,
+.cta-buttons button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 rgba(0,0,0,.25) inset;
+}  
+.cta-buttons a:focus-visible,
+.cta-buttons button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--accent-color);
+}
+.lecture-cards {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 2rem 1rem;
+}
+.lecture-card {
+    background: white;
     color: var(--primary-color);
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-family: verdana;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease;
 }
-
-.hamburger::before {
-    content: "\2630";
-    font-size: 2rem;
-    color: white;
+.lecture-card:hover {
+    transform: scale(1.02);
 }
-
-.hamburger.show::before {
-    content: "\00D7";
+.lecture-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
 }
-
+.lecture-text {
+    padding: 1rem;
+}
+.lecture-text h3 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin: 0 0 .5rem;
+}
+.lecture-info {
+    display: contents;
+}
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+    padding: 1rem;
+    text-align: center;
+    transition: transform .3s ease;
+}
+.card:hover {
+    transform: scale(1.02);
+}
+.card h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 1px 1px 6px rgba(0,0,0,.2);
+}
 main {
   padding: 1rem;
 }
@@ -248,83 +319,6 @@ main {
   max-width: 100%;
   border: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-  
-.cta-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    justify-content: center;
-    padding: 0 1rem;
-    margin-top: 1.5rem;
-}
-  
-.cta-buttons a,
-.cta-buttons button {
-    background: var(--accent-color);
-    color: #fff;
-    padding: 0.9rem 1.5rem;
-    border-radius: 10px;
-    border: 0;
-    text-decoration: none;
-    font: 600 1rem/1 'Inter', sans-serif;
-    display: inline-block;
-    transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
-    box-shadow: 0 2px 0 rgba(0,0,0,.25);
-}
-  
-.cta-buttons a:hover,
-.cta-buttons button:hover {
-    background: #a6291e; /* a touch lighter than accent */
-}
-  
-.cta-buttons a:active,
-.cta-buttons button:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 0 rgba(0,0,0,.25) inset;
-}
-  
-.cta-buttons a:focus-visible,
-.cta-buttons button:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 2px;
-    box-shadow: 0 0 0 4px var(--accent-color);
-}
-.section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 2rem;
-    color: var(--primary-color);
-}
-    
-.lecture-cards {
-    display: grid;
-    max-width: 1200px;
-    margin: 0 auto;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 2rem 1rem;
-}
-.lecture-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-.lecture-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-}
-.lecture-text {
-    padding: 1rem;
-}
-.lecture-text h3 {
-    font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
 .mission {
@@ -381,9 +375,6 @@ footer a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
-html { 
-    overflow-y: scroll; 
 }
 
 .modal {
@@ -498,20 +489,12 @@ html {
     gap: 1rem;
     margin: 1rem 0;
 }
-  
-.social-icons img {
-    width: 32px;
-    height: 32px;
-    max-width: 100%;
-    display: block;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
+.social-icons img,
 .social-icons svg {
-    width: 32px;
-    height: 32px;
-    margin: 0;
-    transition: transform 0.3s ease;
+  width:32px; height:32px;
+  display:block;
+  object-fit:contain;
+  transition:transform .3s ease;
 }  
 .social-icons img:hover {
     transform: scale(1.2);
@@ -610,12 +593,6 @@ html {
 }
 .card.center-text img {
     margin-bottom: 1rem;
-}
-.card h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
 }
 
 .family-section .gallery {
@@ -758,42 +735,13 @@ html {
     gap: 2rem;
 }
   
-.lecture-card {
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease;
-    color: var(--primary-color);
+#consultationModal,
+#consultationModal .modal-content{
+  columns:auto !important;
+  column-count:1 !important;
+  column-gap:normal !important;
 }
-  
-.lecture-card:hover {
-    transform: scale(1.02);
-}
-  
-.lecture-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    animation: fadeIn 1s ease-in-out;
-}
-  
-.lecture-info {
-    padding: 1.5rem;
-}
-  
-.lecture-info h3 {
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-  
-#consltationModal .modal-content,
-#consultationModal {
-    column-count:1 !important;
-}
+
 #contactModal section {
     margin-bottom: 1rem;
 }
@@ -811,10 +759,12 @@ html {
     display: block; 
 }
 html { 
-    box-sizing: 
-    border-box; 
+    box-sizing: border-box; 
+    overflow-y: scroll; 
 }
-*, *::before, *::after { box-sizing: inherit; }
+*, *::before, *::after { 
+    box-sizing: inherit; 
+}
 #contactModal,
 #contactModal .modal-content {
   columns: auto !important;
