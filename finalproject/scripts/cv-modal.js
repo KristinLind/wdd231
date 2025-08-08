@@ -1,93 +1,80 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cvModal = document.getElementById("cv-modal");
-    const openCvBtn = document.getElementById("cvBtn");
-  
-    if (cvModal && openCvBtn) {
-      const modalContent = cvModal.querySelector(".modal-content");
-  
-      openCvBtn.addEventListener("click", async () => {
-        cvModal.style.display = "block";
-  
-        try {
-          const response = await fetch("data/cv.json");
-          const data = await response.json();
-  
-          modalContent.innerHTML = `
-            <span class="close">&times;</span>
-            <h2>${data.fullName}</h2>
-            <blockquote>${data.quote}</blockquote>
-            <p><strong>Bio:</strong> ${data.bio}</p>
-            <h3>Education</h3>
-            <ul>${data.education.map(item => `<li>${item.program}, ${item.institution}</li>`).join('')}</ul>
-            <h3>Degrees</h3>
-            <ul>${data.degrees.map(degree => `
-              <li>${degree.program}, ${degree.institution}
-              ${degree.details ? `<ul>${degree.details.map(detail => `<li>${detail}</li>`).join('')}</ul>` : ''}</li>
-            `).join('')}</ul>
-            <h3>Honors</h3>
-            <ul>${data.honors.map(honor => `<li>${honor}</li>`).join('')}</ul>
-            <h3>Certificates & Programs</h3>
-            <ul>${data.certificates_and_programs.map(cert => `
-              <li><strong>${cert.title}</strong> - ${cert.institution || cert.instructor || cert.location || "N/A"}<br>
-              ${cert.description}</li>
-            `).join('')}</ul>
-          `;
-  
-          modalContent.querySelector(".close").addEventListener("click", () => {
-            cvModal.style.display = "none";
-          });
-  
-          window.addEventListener("click", (e) => {
-            if (e.target === cvModal) {
-              cvModal.style.display = "none";
-            }
-          });
-        } catch (error) {
-          modalContent.innerHTML = `<p>Error loading CV data. Please try again later.</p>`;
-          console.error("Error fetching CV:", error);
-        }
-      });
-    }
 
+  const show = (el) => el.setAttribute("aria-hidden", "false");
+  const hide = (el) => el.setAttribute("aria-hidden", "true");
+
+  const cvModal = document.getElementById("cv-modal");
+  const openCvBtn = document.getElementById("cvBtn");
+  if (cvModal && openCvBtn) {
+    const modalContent = cvModal.querySelector(".modal-content");
+    openCvBtn.addEventListener("click", async () => {
+      cvModal.style.display = "block";
+      try {
+        const response = await fetch("data/cv.json");
+        const data = await response.json();
+        modalContent.innerHTML = `
+          <button class="close" aria-label="Close">&times;</button>
+          <h2>${data.fullName}</h2>
+          <blockquote>${data.quote}</blockquote>
+          <p><strong>Bio:</strong> ${data.bio}</p>
+          <h3>Education</h3>
+          <ul>${data.education.map(item => `<li>${item.program}, ${item.institution}</li>`).join('')}</ul>
+          <h3>Degrees</h3>
+          <ul>${data.degrees.map(degree => `
+            <li>${degree.program}, ${degree.institution}
+            ${degree.details ? `<ul>${degree.details.map(detail => `<li>${detail}</li>`).join('')}</ul>` : ''}</li>
+          `).join('')}</ul>
+          <h3>Honors</h3>
+          <ul>${data.honors.map(honor => `<li>${honor}</li>`).join('')}</ul>
+          <h3>Certificates & Programs</h3>
+          <ul>${data.certificates_and_programs.map(cert => `
+            <li><strong>${cert.title}</strong> - ${cert.institution || cert.instructor || cert.location || "N/A"}<br>
+            ${cert.description}</li>
+          `).join('')}</ul>
+        `;
+        modalContent.querySelector(".close").addEventListener("click", () => {
+          cvModal.style.display = "none";
+        });
+        window.addEventListener("click", (e) => {
+          if (e.target === cvModal) cvModal.style.display = "none";
+        }, { once: true });
+      } catch (error) {
+        modalContent.innerHTML = `<p>Error loading CV data. Please try again later.</p>`;
+        console.error("Error fetching CV:", error);
+      }
+    });
+  }
   const consultationModal = document.getElementById("consultationModal");
   const openConsultationBtn = document.getElementById("openConsultationModal");
   const closeConsultationBtn = document.getElementById("closeConsultation");
 
   if (consultationModal && openConsultationBtn && closeConsultationBtn) {
+    const consultationForm = document.getElementById("consultationForm");
+    const consultationConfirmation = document.getElementById("consultationConfirmation");
+
     openConsultationBtn.addEventListener("click", () => {
       consultationModal.style.display = "block";
     });
 
     closeConsultationBtn.addEventListener("click", () => {
       consultationModal.style.display = "none";
+      if (consultationForm && consultationConfirmation) {
+        consultationForm.style.display = "block";
+        consultationConfirmation.style.display = "none";
+      }
     });
 
-    const consultationForm = document.getElementById("consultationForm");
-    const consultationConfirmation = document.getElementById("consultationConfirmation");
-
     if (consultationForm && consultationConfirmation) {
-      consultationForm.addEventListener("submit", function (e) {
+      consultationForm.addEventListener("submit", (e) => {
         e.preventDefault();
-
         consultationForm.style.display = "none";
         consultationConfirmation.style.display = "block";
-
-        setTimeout(() => {
-          consultationForm.reset();
-        }, 500);
+        setTimeout(() => consultationForm.reset(), 500);
       });
     }
 
-    closeConsultationBtn.addEventListener("click", () => {
-      consultationModal.style.display = "none";
-      consultationForm.style.display = "block";
-      consultationConfirmation.style.display = "none";
-    });
-
     window.addEventListener("click", (e) => {
-      if (e.target === consultationModal) {
-        consultationModal.style.display = "none";
-      }
+      if (e.target === consultationModal) consultationModal.style.display = "none";
     });
   } else {
     console.error("❌ Consultation modal setup failed due to missing elements.");
@@ -103,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const response = await fetch("data/lectures.json");
         const data = await response.json();
-
         lectureDetailsContainer.innerHTML = data.map(lecture => `
           <div class="lecture-detail-block">
             <h3>${lecture.title}</h3>
@@ -113,42 +99,24 @@ document.addEventListener("DOMContentLoaded", () => {
             <hr>
           </div>
         `).join('');
-
-        lectureModal.style.display = "block";
+        show(lectureModal);
       } catch (err) {
         lectureDetailsContainer.innerHTML = `<p>Error loading lecture topics.</p>`;
         console.error(err);
       }
     });
 
-    closeLectureBtn.addEventListener("click", () => {
-      lectureModal.style.display = "none";
-    });
+    closeLectureBtn.addEventListener("click", () => hide(lectureModal));
+    window.addEventListener("click", (e) => { if (e.target === lectureModal) hide(lectureModal); });
+  }
 
-    window.addEventListener("click", (e) => {
-      if (e.target === lectureModal) {
-        lectureModal.style.display = "none";
-      }
-    });
+  const contactModal   = document.getElementById("contactModal");
+  const openContactBtn = document.getElementById("openContact");
+  const closeContactBtn= document.getElementById("closeContact");
+
+  if (contactModal && openContactBtn && closeContactBtn) {
+    openContactBtn.addEventListener("click", () => show(contactModal));
+    closeContactBtn.addEventListener("click", () => hide(contactModal));
+    window.addEventListener("click", (e) => { if (e.target === contactModal) hide(contactModal); });
   }
 });
-
-document.addEventListener('click', (e) => {
-  const trigger = e.target.closest('[data-open]');
-  if (!trigger) return;
-  const sel = trigger.dataset.open;
-  const modal = document.querySelector(sel);
-  if (!modal) return;
-  modal.style.display = 'block';
-  document.documentElement.classList.add('no-scroll'); // optional
-  modal.querySelector('[data-close]')?.focus();
-});
-
-
-document.addEventListener('click', (e) => {
-  if (e.target.matches('[data-close]') || e.target.classList.contains('modal')) {
-    e.target.closest('.modal').style.display = 'none';
-    document.documentElement.classList.remove('no-scroll');
-  }
-});
-

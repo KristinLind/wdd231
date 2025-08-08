@@ -95,8 +95,13 @@
     100% { opacity: 1; transform: translateY(0); }
 }    
 
-html { overflow-y: scroll; }
+html { 
+  overflow-y: scroll; 
+}
 
+@media (min-width: 1024px) {
+  #cv-modal .modal-content { column-count: 2; }
+}
 .modal { left: 50%; transform: translateX(-50%); }
 
 #consultationModal,

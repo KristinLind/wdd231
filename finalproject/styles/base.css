@@ -789,21 +789,13 @@ html {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
-@media (max-width: 600px) {
-article.lecture-card {
-      padding: 1rem; /* space inside card */
-}
-  
-article.lecture-card h2,
-article.lecture-card p {
-      padding-left: 0;  /* keep headings flush inside padding */
-      padding-right: 0;
-    }
-}
   
 #consltationModal .modal-content,
 #consultationModal {
     column-count:1 !important;
+}
+#contactModal section {
+    margin-bottom: 1rem;
 }
 #consultationModal form {
     display: block !important;
@@ -815,10 +807,27 @@ article.lecture-card p {
     float: none !important;
     margin: 0 0 0.9rem 0;
 }
+.modal[aria-hidden="false"] { 
+    display: block; 
+}
 html { 
     box-sizing: 
     border-box; 
 }
 *, *::before, *::after { box-sizing: inherit; }
-  
- 
+#contactModal,
+#contactModal .modal-content {
+  columns: auto !important;
+  column-count: 1 !important;
+  column-gap: normal !important;
+} 
+#contactModal .contact-info {
+    display: grid !important;
+    grid-template-columns: 1fr;   /* one column on mobile */
+    gap: 1rem;
+} 
+#contactModal .contact-block {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+}

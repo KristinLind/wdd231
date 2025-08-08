@@ -228,4 +228,19 @@
     height: auto;
   }
 }
-
+@media (max-width: 600px) {
+  article.lecture-card {
+        padding: 1rem;
+  }
+    
+  article.lecture-card h2,
+  article.lecture-card p {
+        padding-left: 0; 
+        padding-right: 0;
+      }
+}
+@media (min-width: 768px) {
+  #contactModal .contact-info {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

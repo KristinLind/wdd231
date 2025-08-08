@@ -42,12 +42,12 @@
       <img src="images/hero.webp" alt="Rocky Mountain Dentist" loading="lazy" />
     </section>
     
-    <section class="cta-buttons" data-open="consultationModal">
+    <section class="cta-buttons">
       <button id="openConsultationModal">Schedule a Consultation</button>
       <button id="cvBtn" type="button">Download Professional CV</button>
       <button id="exploreLecturesBtn" type="button">Explore Lecture Topics</button>
-      <button id="contact" type="button">Contact Dr Lind</button>
-    </section>
+      <button id="openContact" type="button">Contact Dr Lind</button>
+    </section>    
     
     <div class="modal" id="cv-modal">
       <div class="modal-content">
@@ -135,37 +135,75 @@
       <script src="scripts/cv-modal.js" defer></script>
       <script src="scripts/cards.js" defer></script>
 
-<div id="consultationModal" class="modal">
+<div id="consultationModal" class="modal" aria-hidden="true">
   <div class="modal-content">
-  <button class="close" id="closeConsultation">&times;</button>
-  <h2>Schedule a Consultation</h2>
-  <form id="consultationForm">
-    <label for="consultName">Name:</label>
-    <input type="text" id="consultName" name="consultName" required>
+    <button class="close" id="closeConsultation" aria-label="Close">&times;</button>
+    <h2>Schedule a Consultation</h2>
+    <form id="consultationForm">
+      <label for="consultName">Name:</label>
+      <input type="text" id="consultName" name="consultName" required>
 
-    <label for="consultEmail">Email:</label>
-    <input type="email" id="consultEmail" name="consultEmail" required>
+      <label for="consultEmail">Email:</label>
+      <input type="email" id="consultEmail" name="consultEmail" required>
 
-    <label for="consultDate">Preferred Date:</label>
-    <input type="date" id="consultDate" name="consultDate">
+      <label for="consultDate">Preferred Date:</label>
+      <input type="date" id="consultDate" name="consultDate">
 
-    <label for="consultMessage">Message:</label>
-    <textarea id="consultMessage" name="consultMessage" rows="4" placeholder="Let us know your availability or any questions."></textarea>
+      <label for="consultMessage">Message:</label>
+      <textarea id="consultMessage" name="consultMessage" rows="4" placeholder="Let us know your availability or any questions."></textarea>
 
-    <button type="submit">Submit</button>
-  </form>
-  <div id="consultationConfirmation" style="display:none; margin-top: 1rem; color: green;">
-    ✅ Thank you for submitting the form. We will get back to you with possible dates in 24 hours.<br>
-    📞 Please call if you have not heard anything before that time: <strong>720-331-0410</strong>.
+      <button type="submit">Submit</button>
+    </form>
+    <div id="consultationConfirmation" style="display:none; margin-top: 1rem; color: green;">
+      ✅ Thank you for submitting the form. We will get back to you with possible dates in 24 hours.<br>
+      📞 Please call if you have not heard anything before that time: <strong>720-331-0410</strong>.
+    </div>
   </div>
 </div>
-</div>
-<div id="lectureModal" class="modal">
+
+<div id="lectureModal" class="modal" aria-hidden="true">
   <div class="modal-content">
-    <span class="close" id="closeLectureModal">&times;</span>
+    <button class="close" id="closeLectureModal" aria-label="Close">&times;</button>
     <h2>Lecture Topic Details</h2>
-    <div id="lectureDetailsContainer">
-      <!-- JS will populate here -->
+    <div id="lectureDetailsContainer"></div>
+  </div>
+</div>
+
+<div id="contactModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="contactTitle">
+  <div class="modal-content">
+    <button class="close" id="closeContact" aria-label="Close">&times;</button>
+    <h2 id="contactTitle">Contact Dr. Stacy Doyle Lind</h2>
+
+    <div class="contact-info">
+      <div class="contact-block">
+        <h3>Personal Contact</h3>
+        <p><strong>Email:</strong> <a href="mailto:stace.lind@comcast.net">Email Dr Lind</a></p>
+        <p><strong>Phone:</strong> <a href="tel:7203310410">720-331-0410</a></p>
+        <p><strong>Mailing Address:</strong><br>
+          5164 W Longbow Drive<br>
+          South Jordan, Utah 84009
+        </p>
+      </div>
+
+      <div class="contact-block">
+        <h3>Prestige Smiles Dental</h3>
+        <p><strong>Phone:</strong> <a href="tel:8016107283">801-610-7283</a></p>
+        <p><strong>Address:</strong><br>
+          163 N 400 W<br>
+          Orem, UT 84057
+        </p>
+        <p><strong>Website:</strong> <a href="https://utprestige.com" target="_blank" rel="noopener">utprestige.com</a></p>
+      </div>
+
+      <div class="contact-block">
+        <h3>Professional Dental and Orthodontics</h3>
+        <p><strong>Phone:</strong> <a href="tel:8017858000">801-785-8000</a></p>
+        <p><strong>Address:</strong><br>
+          1172 W 700 N<br>
+          Lindon, UT 84042
+        </p>
+        <p><strong>Website:</strong> <a href="https://prodentalut.com" target="_blank" rel="noopener">prodentalut.com</a></p>
+      </div>
     </div>
   </div>
 </div>
