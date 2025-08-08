@@ -441,45 +441,7 @@ footer a {
   
 .modal button[type="submit"]:hover {
     background-color: var(--accent-color);
-}
-#consultationModal form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-  
-#consultationModal label {
-    font-weight: bold;
-    margin-bottom: 0.3rem;
-}
-  
-#consultationModal input,
-#consultationModal textarea {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.3rem;
-    width: 100%;
-    max-width: 100%;
-}
-  
-#consultationModal button[type="submit"] {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    font-weight: bold;
-    align-self: start;
-}
-  
-#consultationConfirmation {
-    font-size: 1rem;
-    line-height: 1.4;
-}
-    
+}   
 .social-icons {
     display: flex;
     flex-wrap: wrap;
@@ -735,26 +697,6 @@ footer a {
     gap: 2rem;
 }
   
-#consultationModal,
-#consultationModal .modal-content{
-  columns:auto !important;
-  column-count:1 !important;
-  column-gap:normal !important;
-}
-
-#contactModal section {
-    margin-bottom: 1rem;
-}
-#consultationModal form {
-    display: block !important;
-    text-align: left;
-}
-#consultationModal form > * {
-    display: block !important;
-    width: 100% !important;
-    float: none !important;
-    margin: 0 0 0.9rem 0;
-}
 .modal[aria-hidden="false"] { 
     display: block; 
 }
@@ -765,18 +707,25 @@ html {
 *, *::before, *::after { 
     box-sizing: inherit; 
 }
-#contactModal,
-#contactModal .modal-content {
-  columns: auto !important;
-  column-count: 1 !important;
-  column-gap: normal !important;
-} 
-#contactModal .contact-info {
-    display: grid !important;
-    grid-template-columns: 1fr;   /* one column on mobile */
+#contactModal .modal-content{
+    columns: initial !important;
+    column-count: initial !important;
+    column-gap: normal !important;
+    display: block;
+}
+#contactModal h2 {
+    margin-top: 0 0 1rem;
+    text-align: center;
+}
+#contactModal .contact-info{
+    display: grid;
+    grid-template-columns: 1fr;     /* stack on mobile */
     gap: 1rem;
-} 
-#contactModal .contact-block {
-    break-inside: avoid;
-    page-break-inside: avoid;
+}  
+#contactModal a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+#contactModal a:hover {
+    text-decoration: underline;
 }
