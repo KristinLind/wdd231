@@ -167,6 +167,10 @@
 }    
 @media (min-width: 600px) {
     .lectures-main .lecture-card {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
       flex-direction: row;
       display: flex;
       align-items: stretch;
@@ -192,11 +196,10 @@
 @media (max-width: 600px) {
   .lecture-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr;
-    overflow-x: auto;
+    grid-template-columns: 1fr !important;
     gap: .75rem;
-    padding-left: var(--gutter-sm);
-    padding-right: var(--gutter-sm);
+    padding-left: clamp(12px, 4vw, 20px);
+    padding-right: clamp(12px, 4vw, 20px);
     padding-bottom: .75rem;
   }
   .lecture-gallery img {
