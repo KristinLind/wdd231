@@ -175,8 +175,11 @@
       display: flex;
       align-items: stretch;
       gap: 1rem;
+      padding: 1rem 1.1rem;
     }
-  
+    .lecture-card p {
+      line-height: 1.5rem;
+    }
     .lectures-main .lecture-card img {
       width: 60%;
       height: auto;
@@ -206,7 +209,7 @@
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 }
 
