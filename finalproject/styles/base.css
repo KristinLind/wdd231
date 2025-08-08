@@ -35,10 +35,11 @@ header {
 }
   
 .logo {
-    width: clamp(64,9vw, 120px);
+    width: 100%;
+    max-width: 120px;
+    min-width: 64px;
     margin-top: 0.5rem;
-    width: 80px;
-    height: 80px;
+    height: auto;
     object-fit: contain;
     margin:0.5rem 0 0 2rem;
 }
@@ -53,14 +54,15 @@ header {
 }
 
 .profile-card img {
-    width: clamp(84,12vw, 120px);
-    width: 120px;
+    width: 100%;
+    max-width: 120px;
+    min-width: 84px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--accent-color);
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
-    margin-right: 1rem;
+    margin-right: 2rem, 0, 0, 1rem;
 }
 .profile-label {
     margin-top: 0.5rem;
