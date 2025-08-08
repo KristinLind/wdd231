@@ -4,6 +4,7 @@
     --secondary-color: #62c3c9;
     --bg-light: rgb(236, 228, 228);
     --text-color: #343e3b;
+    --gutter-sm: clamp(12px, 4vw, 20px);
 }
   
 body {
@@ -32,7 +33,9 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
+.hamburger { display:none; }
+.logo { width: clamp(64px, 9vw, 120px); height: auto; }
+.profile-card img { width: clamp(84px, 12vw, 120px); height: auto; }
 header a {
     color: var(--secondary-color);
     text-decoration: none;
@@ -67,6 +70,7 @@ header a:hover {
     color: var(--secondary-color);
     text-decoration: none;
     display: inline-block;
+    font-size: clamp(1.2rem, 4vw, 2rem);
 }
   
 .title-text p a:hover {
@@ -101,6 +105,15 @@ header a:hover {
     height: 120px;
     padding: 1rem;
 }
+.hero {
+    position: relative;
+    text-align: center;
+    padding-bottom: 1.25rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
 .hero img {
     width: 100%;
     max-width: 100%;
@@ -110,9 +123,22 @@ header a:hover {
     max-height: 500px;
     border-bottom: 4px solid var(--accent-color);
 }
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    line-height: 1.25;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem .9rem;
+    border-radius: 6px;
+}
   
 .hero h2 {
-    font-size: 1.8rem;
+    font-size: .5rem;
     text-align: center;
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -121,20 +147,21 @@ header a:hover {
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     list-style: none;
     padding: 0;
+    margin-top: 0.5rem;
     margin: 0 auto;
     max-width: 90%;
 }
   
 nav li {
-    margin: 0;
+    margin: 1rem;
 }
 nav a {
     background-color: white;
     color: var(--primary-color);
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 2rem;
     border-radius: 8px;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
@@ -169,6 +196,7 @@ nav a, nav input, nav button {
     font-family: 'Inter', sans-serif;
 }
 .hamburger {
+    display: none;
     background: none;
     border: none;
     color: var(--primary-color);
@@ -228,6 +256,7 @@ main {
     gap: 1.25rem;
     justify-content: center;
     padding: 0 1rem;
+    margin-top: 1.5rem;
 }
   
 .cta-buttons a,
@@ -274,13 +303,13 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 1.25rem;
+    padding: 2rem 1rem;
 }
 .lecture-card {
     background: white;
-    border-radius: 8px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -293,6 +322,9 @@ main {
 }
 .lecture-text {
     padding: 1rem;
+}
+.lecture-text h3 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
 .mission {
@@ -514,7 +546,7 @@ html {
 .oval-image {
     display: block;
     margin: 1rem auto;
-    width: 450px;
+    max-width: 100%;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--accent-color); /* red glow */
@@ -775,5 +807,10 @@ html {
     float: none !important;
     margin: 0 0 0.9rem 0;
 }
+html { 
+    box-sizing: 
+    border-box; 
+}
+*, *::before, *::after { box-sizing: inherit; }
   
  

@@ -24,16 +24,16 @@
     }
   
     .lecture-card img {
-      width: 100%;
+      width: 40%;
       max-width: 300px;
-      height: auto;
+      max-height: none;
       object-fit: cover;
       border-radius: 1rem 0 0 1rem;
     }
   
     .lecture-text {
       width: 60%;
-      padding: 2rem;
+      padding: 1.5rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -95,13 +95,10 @@
     100% { opacity: 1; transform: translateY(0); }
 }    
 
-/* Keep the page width stable when the modal opens */
 html { overflow-y: scroll; }
 
-/* Center the modal itself */
 .modal { left: 50%; transform: translateX(-50%); }
 
-/* ----- FORCE the consultation modal to be single column ----- */
 #consultationModal,
 #consultationModal .modal-content {
   columns: auto !important;
@@ -109,7 +106,6 @@ html { overflow-y: scroll; }
   column-gap: normal !important;
 }
 
-/* Nuke any grid/flex/floats inside just this modal */
 #consultationModal .row,
 #consultationModal .col,
 #consultationModal [class*="grid"],
@@ -121,7 +117,6 @@ html { overflow-y: scroll; }
   flex: none !important;
 }
 
-/* Make the form a simple vertical stack */
 #consultationModal form {
   display: grid !important;
   grid-template-columns: 1fr !important;
@@ -130,7 +125,7 @@ html { overflow-y: scroll; }
 }
 
 #consultationModal form > * {
-  grid-column: 1 / -1 !important;   /* every child takes the full row */
+  grid-column: 1 / -1 !important; 
   width: 100% !important;
 }
 

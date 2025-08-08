@@ -25,7 +25,8 @@
         <img src="images/profile.webp" alt="Stacy Doyle Lind Profile Image" loading="lazy">
         <p class="profile-label">Stacy Doyle Lind, DMD</p>
       </div>
-    </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation"></button>
+      </div>
     <nav>
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -41,15 +42,11 @@
       <img src="images/hero.webp" alt="Rocky Mountain Dentist" loading="lazy" />
     </section>
     
-    <section class="cta-buttons">
-      <button class="btn" data-open="#consultationModal"
-              aria-haspopup="dialog" aria-controls="consultationModal">
-        Schedule a Consultation
-      </button>
-      <button class="btn" id="cvBtn" type="button">Download Professional CV</button>
-      <button class="btn" id="exploreLecturesBtn" type="button">
-        Explore Lecture Topics
-      </button>
+    <section class="cta-buttons" data-open="consultationModal">
+      <button id="openConsultationModal">Schedule a Consultation</button>
+      <button id="cvBtn" type="button">Download Professional CV</button>
+      <button id="exploreLecturesBtn" type="button">Explore Lecture Topics</button>
+      <button id="contact" type="button">Contact Dr Lind</button>
     </section>
     
     <div class="modal" id="cv-modal">
