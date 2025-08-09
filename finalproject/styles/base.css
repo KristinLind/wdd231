@@ -166,11 +166,6 @@ nav a {
     transition: transform 0.3s ease, background .2s ease, color .2s ease;
     display: inline-block;
 }
-nav a:active {
-    background: var(--accent-color);
-    color: white;
-    font-weight: bold;
-}
 nav a[aria-current="page"] {
     background-color: var(--accent-color);
     color: white;
@@ -254,9 +249,6 @@ nav a:hover {
     font-size: clamp(1rem, 3vw, 1.5rem);
     margin: 0 0 .5rem;
 }
-.lecture-info {
-    display: contents;
-}
 .card {
     background: #fff;
     border-radius: 10px;
@@ -287,37 +279,6 @@ nav a:hover {
 }
 main {
   padding: 1rem;
-}
-
-.content-section {
-  max-width: 900px;
-  margin: 0 auto 2rem auto;
-  padding: 0 1rem;
-}
-
-.content-section h2 {
-  font-family: 'Inter', sans-serif;
-  color: var(--primary-color);
-  margin-top: 2rem;
-}
-
-.wireframe-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem 0;
-}
-
-.wireframe-gallery figure {
-  flex: 1 1 300px;
-  text-align: center;
-}
-
-.wireframe-gallery img {
-  max-width: 100%;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mission {
@@ -518,14 +479,6 @@ footer a {
     border-radius: 12px;
     color: var(--primary-color);
 }
-.card h2,
-.card .intro-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-}
 
 .card p {
   font-size: 1.1rem;
@@ -723,10 +676,3 @@ html {
     grid-template-columns: 1fr;
     gap: 1rem;
 }  
-#contactModal a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-#contactModal a:hover {
-    text-decoration: underline;
-}
