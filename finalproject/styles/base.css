@@ -336,7 +336,12 @@ footer a {
     text-decoration: none;
     font-weight: bold;
 }
-
+.visit-badge {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-top: 0.5rem;
+}
+  
 .modal {
     display: none;
     position: fixed;

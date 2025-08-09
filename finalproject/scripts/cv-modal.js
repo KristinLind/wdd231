@@ -158,3 +158,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+(function showVisitBadge() {
+  const el = document.getElementById('visitBadge');
+  if (!el) return;
+
+  const count = parseInt(localStorage.getItem('visitCount') || '1', 10);
+  const last  = localStorage.getItem('lastVisit');
+
+  let lastText = '';
+  if (last) {
+    try {
+      lastText = ` — last visit: ${new Date(last).toLocaleString()}`;
+    } catch {}
+  }
+  el.textContent = `Welcome! Visit #${count}${lastText}`;
+})();
