@@ -70,6 +70,7 @@ header {
     margin-top: 0.5rem;
     font-weight: bold;
     color: white;
+    background-color: var(--accent-color);
     font-size: .8rem;
 } 
 header a {
@@ -245,6 +246,10 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     transition: transform .3s ease;
+}
+.lecture-hero-box h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 .lecture-card:hover {
     transform: scale(1.02);
