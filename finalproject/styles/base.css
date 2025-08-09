@@ -219,6 +219,7 @@ nav a:hover {
     outline-offset: 2px;
     box-shadow: 0 0 0 4px var(--accent-color);
 }
+
 .lecture-cards {
     display: grid;
     max-width: 1200px;
