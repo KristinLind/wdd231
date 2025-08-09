@@ -4,7 +4,6 @@
     --secondary-color: #62c3c9;
     --bg-light: rgb(236, 228, 228);
     --text-color: #343e3b;
-    --gutter-sm: clamp(12px, 4vw, 20px);
 }
   
 body {
@@ -54,7 +53,6 @@ header {
     overflow-wrap: break-word;
 
 }
-
 .profile-card img {
     width: 72px;
     max-width: 120px;
@@ -228,7 +226,6 @@ nav a:hover {
     outline-offset: 2px;
     box-shadow: 0 0 0 4px var(--accent-color);
 }
-
 .lecture-cards {
     display: grid;
     max-width: 1200px;
@@ -677,7 +674,8 @@ footer a {
 .modal[aria-hidden="false"] { 
     display: block; 
 }
-html { 
+html, body { 
+    overflow-x: hidden;
     box-sizing: border-box; 
     overflow-y: scroll; 
 }
