@@ -44,41 +44,44 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+(function setupConsultationModal() {
   const consultationModal = document.getElementById("consultationModal");
-  const openConsultationBtn = document.getElementById("openConsultationModal");
-  const closeConsultationBtn = document.getElementById("closeConsultation");
+  const openBtn = document.getElementById("openConsultationModal");
+  const closeBtn = document.getElementById("closeConsultation");
+  const form = document.getElementById("consultationForm");
+  const confirm = document.getElementById("consultationConfirmation");
 
-  if (consultationModal && openConsultationBtn && closeConsultationBtn) {
-    const consultationForm = document.getElementById("consultationForm");
-    const consultationConfirmation = document.getElementById("consultationConfirmation");
+  if (!consultationModal || !openBtn || !closeBtn || !form || !confirm) return;
 
-    openConsultationBtn.addEventListener("click", () => {
-      consultationModal.style.display = "block";
-    });
+  openBtn.addEventListener("click", () => {
+    consultationModal.style.display = "block";
+    consultationModal.setAttribute("aria-hidden", "false");
+  });
 
-    closeConsultationBtn.addEventListener("click", () => {
+  closeBtn.addEventListener("click", () => {
+    consultationModal.style.display = "none";
+    consultationModal.setAttribute("aria-hidden", "true");
+    form.style.display = "block";
+    confirm.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === consultationModal) {
       consultationModal.style.display = "none";
-      if (consultationForm && consultationConfirmation) {
-        consultationForm.style.display = "block";
-        consultationConfirmation.style.display = "none";
-      }
-    });
-
-    if (consultationForm && consultationConfirmation) {
-      consultationForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        consultationForm.style.display = "none";
-        consultationConfirmation.style.display = "block";
-        setTimeout(() => consultationForm.reset(), 500);
-      });
+      consultationModal.setAttribute("aria-hidden", "true");
+      form.style.display = "block";
+      confirm.style.display = "none";
     }
+  });
 
-    window.addEventListener("click", (e) => {
-      if (e.target === consultationModal) consultationModal.style.display = "none";
-    });
-  } else {
-    console.error("❌ Consultation modal setup failed due to missing elements.");
-  }
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    form.style.display = "none";
+    confirm.style.display = "block";
+    setTimeout(() => form.reset(), 500);
+  });
+})();
 
   const lectureModal = document.getElementById("lectureModal");
   const closeLectureBtn = document.getElementById("closeLectureModal");

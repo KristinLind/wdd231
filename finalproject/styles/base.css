@@ -134,13 +134,13 @@ img {
     inset: 50% auto auto 50%;
     transform: translate(-50%, -50%);
     color: var(--primary-color);
-    font-size: 1.25rem; 
-    line-height: 1.2;
+    font-size: 1.125rem; 
+    line-height: 1.25;
     font-weight: bold;
     background-color: rgba(255,255,255,0.7);
     padding: 0.4rem 0.6rem;
     border-radius: 6px;
-    max-width: 88%; 
+    max-width: 92vw; 
     text-align: center;
 }
 @media (max-width: 480px) {
