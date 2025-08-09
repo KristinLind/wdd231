@@ -120,3 +120,41 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("click", (e) => { if (e.target === contactModal) hide(contactModal); });
   }
 });
+
+(function trackVisits() {
+  const lastVisit = localStorage.getItem("lastVisit");
+  const visitCount = parseInt(localStorage.getItem("visitCount") || "0", 10) + 1;
+
+  localStorage.setItem("visitCount", String(visitCount));
+  localStorage.setItem("lastVisit", new Date().toISOString());
+
+  console.log(`Welcome back! Visit #${visitCount}${lastVisit ? ` — last: ${new Date(lastVisit).toLocaleString()}` : ""}`);
+})();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const consultForm = document.getElementById("consultationForm");
+  const nameEl = document.getElementById("consultName");
+  const emailEl = document.getElementById("consultEmail");
+  const dateEl = document.getElementById("consultDate");
+  const msgEl = document.getElementById("consultMessage");
+
+  try {
+    const saved = JSON.parse(localStorage.getItem("consultationData") || "{}");
+    if (nameEl && saved.name) nameEl.value = saved.name;
+    if (emailEl && saved.email) emailEl.value = saved.email;
+    if (dateEl && saved.date) dateEl.value = saved.date;
+    if (msgEl && saved.message) msgEl.value = saved.message;
+  } catch {}
+
+  if (consultForm) {
+    consultForm.addEventListener("submit", () => {
+      const data = {
+        name: nameEl?.value?.trim() || "",
+        email: emailEl?.value?.trim() || "",
+        date: dateEl?.value || "",
+        message: msgEl?.value?.trim() || ""
+      };
+      localStorage.setItem("consultationData", JSON.stringify(data));
+    });
+  }
+});
