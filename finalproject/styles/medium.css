@@ -28,37 +28,40 @@
     padding: 1rem;
   }
 }
-
-@media (max-width: 600px) {
+/* Medium screens: tighten header */
+@media (max-width: 1024px) {
+  header {
+    padding-bottom: .75rem;
+  }
   .header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: .75rem 1rem 0;
     text-align: center;
     gap: .75rem;
   }
-
   .profile-card {
     width: 100%;
     max-width: 250px;
     padding: 0;
     margin-top: 1rem;
   }
-
   .profile-card img {
     margin: 0 auto;
     display: block;
+    max-width: 90px;
     width: clamp(80px, 25vw, 120px);
-    height: auto;
+    height: 90px;
   }
-
   .logo {
     margin: 0 auto;
+    max-width: 90px;
+    margin-left: .75rem;
   }
   .hamburger {
     display: block;
-    order: 4;              /* below profile card */
+    order: 4;       
     background: none;
     border: 0;
     font-size: 2rem;
@@ -66,7 +69,7 @@
     cursor: pointer;
   }
   nav ul {
-    display: none;         /* hidden until toggled */
+    display: none;         
     flex-direction: column;
     gap: .75rem;
     padding: 1rem;
@@ -79,7 +82,77 @@
       max-height: 250px;
   }
 }
+/* Small screens: compact header + dropdown nav next to hamburger */
+@media (max-width: 700px) {
+  header { 
+    padding-bottom: .5rem; 
+  }
+  .header-container {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: .5rem .75rem 0;
+    position: relative;
+  } 
+  .logo { 
+    max-width: 72px; 
+    margin: .25rem 0 0 .25rem; 
+  }
+  .title-text p { 
+    font-size: 1.25rem; 
+  }
+  .profile-card img {
+    max-width: 64px; 
+    height: 64px; 
+    border-width: 2px; 
+    margin-right: .5rem;
+  }
+  .profile-label { 
+    display: none; 
+  }
+  .hamburger { 
+    display: block;
+    position: absolute;
+    top: .25rem;
+    right: .5rem;
+    z-index: 2100;
+  }
 
+  nav { 
+    position: relative; 
+  }
+  nav ul {
+    position: absolute;
+    right: .5rem;
+    top: calc(100% + .5rem); 
+    left: auto;
+    width: min(78vw, 320px);
+    margin: 0;                 
+    padding: .5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    display: none;            
+    flex-direction: column;
+    gap: .5rem;
+    z-index: 2000;
+  }
+  nav ul.show { 
+    display: flex; 
+  }
+
+  nav a {
+    display: block;
+    padding: .75rem 1rem;
+    background: #fff;
+    color: var(--primary-color);
+    border-radius: 8px;
+    transform: none; 
+  }
+  nav a:hover { 
+    background: var(--accent-color); 
+    color: #fff; 
+  }
+}
 @media (max-width: 600px) {
     .social-icons img {
       width: 28px;
