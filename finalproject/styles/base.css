@@ -714,12 +714,12 @@ html {
     display: block;
 }
 #contactModal h2 {
-    margin-top: 0 0 1rem;
+    margin-top: 0 0 1rem 0;
     text-align: center;
 }
 #contactModal .contact-info{
     display: grid;
-    grid-template-columns: 1fr;     /* stack on mobile */
+    grid-template-columns: 1fr;
     gap: 1rem;
 }  
 #contactModal a {
