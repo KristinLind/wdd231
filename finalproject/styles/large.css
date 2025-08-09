@@ -3,7 +3,36 @@
       column-count: 2;
     }
 }
+@media (min-width: 1024px) {
+  .header-container {
+    grid-template-columns: 120px 1fr 120px;
+  }
+  .logo,
+  .profile-card img { 
+    width: 120px; 
+    height: 120px; 
+  }
+  .profile-label { 
+    font-size: 1rem; 
+  }
+  .title-text p { 
+    font-size: 2.1rem; 
+}
+@media (min-width: 600px) {
+  .hamburger { display: none; }
+  nav ul { display: flex; }
+}
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 2.25rem;
+    max-width: 80%;
+  }
+  .hero img { 
+    max-height: 500px; 
+  }
+}
 
+}
 @media (min-width: 1200px) {
     .lecture-cards {
       display: grid;
