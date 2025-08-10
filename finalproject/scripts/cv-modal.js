@@ -1,3 +1,16 @@
+// If the module is handling the CV modal on this page, skip all legacy wiring
+if (window.USE_MODULE) {
+  console.debug('cv-modal.js: skipped because USE_MODULE is true.');
+} else {
+  // ----- everything that was already in cv-modal.js stays inside this block -----
+  document.addEventListener("DOMContentLoaded", () => {
+    // ... your existing cv/consultation/lecture modal code ...
+  });
+
+  (function trackVisits() { /* ... */ })();
+  document.addEventListener("DOMContentLoaded", () => { /* ... */ });
+  (function showVisitBadge() { /* ... */ })();
+}
 document.addEventListener("DOMContentLoaded", () => {
 
   const show = (el) => el.setAttribute("aria-hidden", "false");
