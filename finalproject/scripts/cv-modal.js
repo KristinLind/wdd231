@@ -45,44 +45,117 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-(function setupConsultationModal() {
-  const consultationModal = document.getElementById("consultationModal");
-  const openBtn = document.getElementById("openConsultationModal");
-  const closeBtn = document.getElementById("closeConsultation");
-  const form = document.getElementById("consultationForm");
-  const confirm = document.getElementById("consultationConfirmation");
+  (function setupConsultationModal() {
+    const consultationModal = document.getElementById("consultationModal");
+    const openBtn   = document.getElementById("openConsultationModal");
+    const closeBtn  = document.getElementById("closeConsultation");
+    const form      = document.getElementById("consultationForm");
+    const confirm   = document.getElementById("consultationConfirmation");
+    const welcome   = document.getElementById("consultationWelcome");
+  
+    const nameEl = document.getElementById("consultName");
+    const emailEl = document.getElementById("consultEmail");
+    const dateEl = document.getElementById("consultDate");
+    const msgEl  = document.getElementById("consultMessage");
+  
+    if (!consultationModal || !openBtn || !closeBtn || !form || !confirm) return;
 
-  if (!consultationModal || !openBtn || !closeBtn || !form || !confirm) return;
+    const prefillFromStorage = () => {
+      try {
+        const draft = JSON.parse(localStorage.getItem("consultationData") || "{}");
+        if (draft.name)   nameEl.value  = draft.name;
+        if (draft.email)  emailEl.value = draft.email;
+        if (draft.date)   dateEl.value  = draft.date;
+        if (draft.message) msgEl.value  = draft.message;
+      } catch {}
+    };
 
-  openBtn.addEventListener("click", () => {
-    consultationModal.style.display = "block";
-    consultationModal.setAttribute("aria-hidden", "false");
-  });
-
-  closeBtn.addEventListener("click", () => {
-    consultationModal.style.display = "none";
-    consultationModal.setAttribute("aria-hidden", "true");
-    form.style.display = "block";
-    confirm.style.display = "none";
-  });
-
-  window.addEventListener("click", (e) => {
-    if (e.target === consultationModal) {
+    const showWelcomeIfReturning = () => {
+      try {
+        const history = JSON.parse(localStorage.getItem("consultationHistory") || "[]");
+        if (history.length) {
+          const last = history[history.length - 1];
+          const lastWhen = new Date(last.submittedAt).toLocaleString();
+          welcome.style.display = "block";
+          welcome.textContent = `Welcome back${last.name ? `, ${last.name}` : ""}! Your last consultation request was submitted on ${lastWhen}. Your info has been prefilled.`;
+        } else {
+          welcome.style.display = "none";
+          welcome.textContent = "";
+        }
+      } catch {
+        welcome.style.display = "none";
+      }
+    };
+  
+    openBtn.addEventListener("click", () => {
+      consultationModal.style.display = "block";
+      consultationModal.setAttribute("aria-hidden", "false");
+    
+      form.style.display = "block";
+      confirm.style.display = "none";
+  
+      prefillFromStorage();
+      showWelcomeIfReturning();
+    });
+  
+    closeBtn.addEventListener("click", () => {
       consultationModal.style.display = "none";
       consultationModal.setAttribute("aria-hidden", "true");
       form.style.display = "block";
       confirm.style.display = "none";
-    }
-  });
+    });
+  
+    window.addEventListener("click", (e) => {
+      if (e.target === consultationModal) {
+        consultationModal.style.display = "none";
+        consultationModal.setAttribute("aria-hidden", "true");
+        form.style.display = "block";
+        confirm.style.display = "none";
+      }
+    });
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    form.style.display = "none";
-    confirm.style.display = "block";
-    setTimeout(() => form.reset(), 500);
-  });
-})();
+    const saveDraft = () => {
+      const data = {
+        name: (nameEl.value || "").trim(),
+        email: (emailEl.value || "").trim(),
+        date: dateEl.value || "",
+        message: (msgEl.value || "").trim()
+      };
+      localStorage.setItem("consultationData", JSON.stringify(data));
+    };
+    [nameEl, emailEl, dateEl, msgEl].forEach(el => {
+      if (el) el.addEventListener("input", saveDraft);
+    });
 
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      const data = {
+        name: (nameEl.value || "").trim(),
+        email: (emailEl.value || "").trim(),
+        date: dateEl.value || "",
+        message: (msgEl.value || "").trim()
+      };
+
+      localStorage.setItem("consultationData", JSON.stringify(data));
+  
+      const history = JSON.parse(localStorage.getItem("consultationHistory") || "[]");
+      const submittedAt = new Date().toISOString();
+      history.push({ ...data, submittedAt });
+      localStorage.setItem("consultationHistory", JSON.stringify(history));
+
+      const submittedLocal = new Date(submittedAt).toLocaleString();
+      confirm.innerHTML = `
+        ✅ Thank you${data.name ? `, ${data.name}` : ""}! We received your request on <strong>${submittedLocal}</strong>.<br>
+        We'll get back to you within 24 hours.<br>
+        📞 If you don't hear from us, please call <strong>720-331-0410</strong>.
+      `;
+      form.style.display = "none";
+      confirm.style.display = "block";
+      setTimeout(() => form.reset(), 400);
+    });
+  })();
+  
   const lectureModal = document.getElementById("lectureModal");
   const closeLectureBtn = document.getElementById("closeLectureModal");
   const lectureDetailsContainer = document.getElementById("lectureDetailsContainer");
